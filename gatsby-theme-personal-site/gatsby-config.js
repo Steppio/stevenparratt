@@ -1,6 +1,6 @@
 module.exports = options => ({
   siteMetadata: {
-    title: options.siteTitle || "Test",
+    title: "gatsby-theme-personal-site",
     description: options.siteDescription || "Testi",
     siteUrl: options.siteUrl || "Testiää",
   },

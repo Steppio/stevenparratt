@@ -7,8 +7,9 @@
 module.exports = {
   plugins: [
     {
-      resolve: "@rennehir/gatsby-theme-personal-site",
+      resolve: "gatsby-theme-personal-site",
       options: {
+        path: "../theme",
         siteTitle: "Renne Hirsimäki",
         siteDescription:
           "This is an example site of gatsby-theme-personal-site",
