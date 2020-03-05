@@ -19,7 +19,7 @@
     "react-dom": "^16.8.6",
     "react-typography": "^0.16.19",
     "typography": "^0.16.19",
-    "@rennehir/gatsby-theme-personal-site": "^1.0.0",
+    "@rennehir/gatsby-theme-personal-site": "^1.0.0"
   },
   "devDependencies": {
     "gatsby-cli": "^2.7.21",
