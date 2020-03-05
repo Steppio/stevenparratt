@@ -20,21 +20,21 @@ module.exports = {
         servicesBasePath: "/services", // default: /services
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Spartan`,
-            variants: [`400`, `700`]
-          },
-          {
-            family: `Roboto`,
-            subsets: [`latin`]
-          },
-        ],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
+    //   options: {
+    //     fonts: [
+    //       {
+    //         family: `Spartan`,
+    //         variants: [`400`, `700`]
+    //       },
+    //       {
+    //         family: `Roboto`,
+    //         subsets: [`latin`]
+    //       },
+    //     ],
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
