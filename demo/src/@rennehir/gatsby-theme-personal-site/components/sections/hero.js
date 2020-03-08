@@ -54,6 +54,9 @@ S.Section = styled.section`
   padding: ${props => props.theme.space[5]}px 0 0 0;
   margin-bottom: 0px;
 
+  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    background-size: 100%;
+  }
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "text image";

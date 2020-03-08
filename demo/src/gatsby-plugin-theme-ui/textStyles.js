@@ -5,15 +5,9 @@
  */
 
 const textStyles = {
-  navLink: {
-    ml: "1em !important",
-    minWidth: "250px"
-  },
   display: {
     fontFamily: "heading",
     fontWeight: "heading",
-    lineHeight: "1.3",
-    fontSize: 7,
   },
   heading: {
     fontFamily: "heading",
@@ -24,13 +18,11 @@ const textStyles = {
     fontFamily: "body",
     fontWeight: "body",
     lineHeight: "body",
-    fontSize: 3,
   },
   quote: {
     fontFamily: "body",
     fontWeight: "body",
     lineHeight: "body",
-    fontSize: 4,
   },
   fontAwesome: {
     fontFamily: '"Font Awesome 5 Free"',

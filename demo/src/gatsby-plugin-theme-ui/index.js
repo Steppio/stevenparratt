@@ -1,6 +1,5 @@
 import commonUtilityClasses from "./commonUtilityClasses"
 import textStyles from "./textStyles"
-import Dicknose from "./mobileNav"
 
 /**
  * This theme uses `theme-ui` under the hood.
@@ -128,7 +127,7 @@ export default {
             height: '4px',
             mb: '5px',
             position: 'relative',
-            background: '#cdcdcd',
+            background: 'secondary',
             borderRadius: '3px',
             zIndex: '1',
             transformOrigin: '4px 0px',
@@ -201,17 +200,22 @@ export default {
     Main: {
       h1: {
         span: {
-          fontSize: '3.5em',
+          fontSize: ['1.75em', '1.75em', '3.5em', '3.5em'],
           color: 'white',
-          fontStyle: 'normal'
-        },   
+          ml: ['10px', '10px', '0', '0'],
+          fontStyle: 'normal',
+        },
         fontStyle: 'oblique',
-        fontSize: '2.75em',
+        fontSize: ['1.75em', '1.75em', '2.25em', '2.75em'],
+        mb: ['0', '2em'],
         color: 'secondary'
       },  
       h2: {
-        fontSize: '2.75em',
-        color: "secondary"
+        fontSize: ['1.75em', '1.75em', '2.25em', '2.75em'],
+        color: "secondary",
+        textAlign: ['center', 'center', 'left', 'left'],
+        mt: ['15px', '15px', '25px', '25px'],
+        mb: ['20px', '20px', '1.666rem', '1.666rem'],
       },
       margin: "0 auto",
       maxWidth: "container",
@@ -223,32 +227,6 @@ export default {
       },
       padding: 0,
       maxWidth: "container",
-    },
-    h1: {
-      variant: "textStyles.heading",
-      fontSize: 6,
-      textTransform: "uppercase",
-    },
-    h2: {
-      variant: "textStyles.heading",
-      fontSize: 5,
-      textTransform: "uppercase",
-    },
-    h3: {
-      variant: "textStyles.heading",
-      fontSize: 4,
-    },
-    h4: {
-      variant: "textStyles.heading",
-      fontSize: 3,
-    },
-    h5: {
-      variant: "textStyles.heading",
-      fontSize: 2,
-    },
-    h6: {
-      variant: "textStyles.heading",
-      fontSize: 1,
     },
     p: {
       variant: "textStyles.body",
