@@ -49,9 +49,9 @@ S.Section = styled.section`
   grid-gap: ${props => props.theme.space[1]}px;
   background-image: url(${props => props.bg});
   background-repeat: no-repeat;
-  background-position: 0% 0%;
+  background-position: 0% 33%;
   background-size: 50%;
-  padding: ${props => props.theme.space[5]}px 0 0 0;
+  padding: 100px 0 0 0;
   margin-bottom: 0px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
@@ -60,6 +60,7 @@ S.Section = styled.section`
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "text image";
+    background-position: 0% 0%;
   }
 `
 

@@ -35,6 +35,7 @@ module.exports = {
     //     ],
     //   },
     // },
+    `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
@@ -46,7 +47,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-typography`,
       options: {
-        pathToConfigModule: `src/utils/typography`,
+        pathToConfigModule: `${__dirname}/src/utils/typography`,
       },
     }      
   ],

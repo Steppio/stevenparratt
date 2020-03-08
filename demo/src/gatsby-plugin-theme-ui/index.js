@@ -26,16 +26,16 @@ export default {
     heading: '"Spartan", Roboto, Helvetica, sans-serif',
     fontAwesome: "FontAwesome",
   },
-  fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  fontWeights: {
-    body: 400,
-    heading: 900,
-    bold: 700,
-  },
-  lineHeights: {
-    text: "1.45",
-    heading: "1.1",
-  },
+  // fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  // fontWeights: {
+  //   body: 400,
+  //   heading: 900,
+  //   bold: 700,
+  // },
+  // lineHeights: {
+  //   text: "1.45",
+  //   heading: "1.1",
+  // },
   sizes: {
     container: 1280,
   },
@@ -49,7 +49,6 @@ export default {
       backgroundColor: "background",
       color: "text",
       fontFamily: "default",
-      fontSize: 1,
       lineHeight: "text",
     },
     Header: {
@@ -87,7 +86,12 @@ export default {
             transformOrigin: '0% 0%',
             transform: 'translate(-100%, 0)',
             transition: 'transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)',          
-          },          
+          },  
+          ".menuBorder": {
+            span: {
+              background: 'secondary',
+            },
+          },       
           input: {
             ":checked ~ span": {
               opacity: '1',
@@ -127,7 +131,7 @@ export default {
             height: '4px',
             mb: '5px',
             position: 'relative',
-            background: 'secondary',
+            background: 'white',
             borderRadius: '3px',
             zIndex: '1',
             transformOrigin: '4px 0px',
@@ -135,8 +139,8 @@ export default {
           },
           display: 'block',
           position: 'relative',
-          top: '50px',
-          left: '50px',
+          top: '30px',
+          left: '25px',
           zIndex: '1',
           userSelect: 'none',
         },
@@ -148,7 +152,6 @@ export default {
       fontWeight: "bold",
       margin: 0,
       position: 'fixed',    
-      width: '100%',
       h1: {
         color: "white",
         fontFamily: "heading",
@@ -200,22 +203,37 @@ export default {
     Main: {
       h1: {
         span: {
-          fontSize: ['1.75em', '1.75em', '3.5em', '3.5em'],
+          fontSize: ['1.35em', '1.75em', '3.5em', '3.5em'],
           color: 'white',
+          textAlign: 'center',
           ml: ['10px', '10px', '0', '0'],
           fontStyle: 'normal',
         },
         fontStyle: 'oblique',
         fontSize: ['1.75em', '1.75em', '2.25em', '2.75em'],
         mb: ['0', '2em'],
+        textAlign: 'center',
         color: 'secondary'
       },  
       h2: {
         fontSize: ['1.75em', '1.75em', '2.25em', '2.75em'],
         color: "secondary",
         textAlign: ['center', 'center', 'left', 'left'],
-        mt: ['15px', '15px', '25px', '25px'],
-        mb: ['20px', '20px', '1.666rem', '1.666rem'],
+        mt: ['22px', '22px', '25px', '25px'],
+        mb: ['10px', '10px', '1.666rem', '1.666rem'],
+      },
+      ".about-section": {
+        a: {
+          ':nth-child(1)': {
+            float: 'left',
+          },
+          ':nth-child(2)': {
+            float: 'right',
+          },   
+          minWidth: '49%',
+          p: ['15px 10px', '15px 10px', '1.05rem 3rem', '1.05rem 3rem']
+        },
+
       },
       margin: "0 auto",
       maxWidth: "container",
@@ -228,11 +246,11 @@ export default {
       padding: 0,
       maxWidth: "container",
     },
-    p: {
-      variant: "textStyles.body",
-      fontSize: "1.55em",
-      lineHeight: "1.6em"
-    },
+    // p: {
+    //   variant: "textStyles.body",
+    //   fontSize: "1.55em",
+    //   lineHeight: "1.6em"
+    // },
     a: {
       variant: "textStyles.body",
       color: "primary",

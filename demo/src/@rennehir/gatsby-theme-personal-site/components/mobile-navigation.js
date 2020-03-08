@@ -25,9 +25,11 @@ const Navigation = () => {
       <div id="menuToggle">
         <input type="checkbox" />
 
-        <span></span>
-        <span></span>
-        <span></span>
+
+          <span></span>
+          <span></span>
+          <span></span>
+
 
         <ul id="menu">
           {data.allSitePage.nodes.map(page => (

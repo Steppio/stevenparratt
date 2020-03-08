@@ -12,7 +12,7 @@ const ServiceTemplate = ({ pathContext: { basePaths }, data: { service } }) => {
   const { title, slug, excerpt, body, illustration } = service
 
   return (
-    <Layout sx={{ my: 4 }}>
+    <Layout>
       <SEO postMeta={{ title: title, description: excerpt, slug, image: illustration.publicURL }} />
       {illustration && (
         <Image

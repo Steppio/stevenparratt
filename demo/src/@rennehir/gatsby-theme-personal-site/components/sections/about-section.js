@@ -17,7 +17,6 @@ const AboutSection = ({ }) => {
     }}>
         <h1 sx={{
           textAlign: 'center',
-          fontSize: '3.5em !important',
           color: 'secondary !important',
           fontStyle: 'normal !important'
         }}>About me</h1>

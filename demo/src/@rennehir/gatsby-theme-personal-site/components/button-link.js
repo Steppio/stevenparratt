@@ -19,7 +19,7 @@ S.Link = styled(Link)`
   --bg-color: ${({ theme }) => theme.colors["white"]};
   display: inline-block;
   box-sizing: border-box;
-  background-color: var(--bg-color);
+  background-color: ${({ theme }) => theme.colors["background"]};
   padding: 1.05rem 3rem;
   border-radius: 2px;
   letter-spacing: 0.25em;
@@ -33,11 +33,19 @@ S.Link = styled(Link)`
   text-transform: uppercase;
   text-align: center;
   transition: all 200ms ease-in-out;
-  border: 5px dashed rgba(255,255,255,0);
+  color: ${({ theme }) => theme.colors["secondary"]};
+  border: 3px solid ${({ theme }) => theme.colors["secondary"]};
+
+  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    font-size: 0.95em;
+    min-width: 185px;
+    padding: 15px 10px;
+
+  }
 
   :hover {
     filter: brightness(1);
-    color: ${({ theme }) => theme.colors["secondary"]};
-    border: 5px solid ${({ theme }) => theme.colors["secondary"]};
+    color: ${({ theme }) => theme.colors["white"]};
+    border: 3px solid ${({ theme }) => theme.colors["white"]};
   }
 `
