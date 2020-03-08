@@ -2,15 +2,16 @@
 import { jsx, Styled } from "theme-ui"
 import { graphql } from "gatsby"
 import styled from "@emotion/styled"
-
+import ButtonLink from "../button-link"
 import Image from "../image"
 import BlobUrl from "../../assets/blobs/blob-1.svg"
+import "../layout.css"
 
 const Hero = ({ greeting, name, subtitle, image }) => {
   return (
-    <S.Section sx={{ my: 4 }} bg={BlobUrl}>
+    <S.Section sx={{ }} bg={BlobUrl}>
       <S.ImageContainer>
-        <Image image={image} alt={image.imageAltText} />
+        <Image sx={{ my: 0 }} image={image} alt={image.imageAltText} />
       </S.ImageContainer>
       <S.TextContainer>
         <Styled.h1 sx={{ variant: "textStyles.display" }}>
@@ -50,7 +51,8 @@ S.Section = styled.section`
   background-repeat: no-repeat;
   background-position: 0% 0%;
   background-size: 50%;
-  padding: ${props => props.theme.space[3]}px 0;
+  padding: ${props => props.theme.space[5]}px 0 0 0;
+  margin-bottom: 0px;
 
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
     grid-template-columns: 1fr 1fr;

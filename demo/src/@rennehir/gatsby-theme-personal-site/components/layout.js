@@ -10,13 +10,13 @@ import {
   ThemeProvider,
 } from "theme-ui"
 import theme from "gatsby-plugin-theme-ui"
-
 import SEO from "../components/seo"
+import Navigation from "./navigation"
+import MobileNavigation from "./mobile-navigation"
+import Footer from "./footer.js"
 
 import "@fortawesome/fontawesome-free/css/all.css"
-
-import Navigation from "./navigation"
-import Footer from "./footer.js"
+import "./layout.css"
 
 const Layout = ({ children, ...props }) => {
   return (
@@ -33,9 +33,9 @@ const Layout = ({ children, ...props }) => {
         <Header>
           <Container sx={{
             maxWidth: '1200'
-          }}>
-            <h1>StevenParratt.co.uk</h1>     
+          }}>  
             <Navigation />
+            <MobileNavigation />
           </Container>
         </Header>
         <Main>

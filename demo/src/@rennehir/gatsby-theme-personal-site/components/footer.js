@@ -47,15 +47,21 @@ const Footer = () => {
           </Link>
         )}
       </div>
-      <Styled.p sx={{ fontSize: 1 }}>
-        © All rights are reserved | {new Date().getFullYear()} |{" "}
+      <Styled.p sx={{ fontSize: "1.15em !important", color: "background", m: "10px 0 0 0" }}>
+        ©{new Date().getFullYear()} |{" "}
         <a
           href="https://renne.tech"
           rel="noopener noreferrer"
           target="_blank"
-          sx={{ color: "white" }}
+          sx={{ 
+            color: "background", 
+            textDecoration: "none",
+            m: "0",
+            ":hover": { color: "white" },
+            transition: "color 200ms ease-in-out",            
+          }}
         >
-          Renne Hirsimäki
+          Steven Parratt
         </a>
       </Styled.p>
     </div>
@@ -71,9 +77,9 @@ const Link = ({ to, children, ...props }) => (
     rel="noopener noreferrer"
     sx={{
       fontSize: 5,
-      color: "white",
+      color: "background",
       mx: 2,
-      ":hover": { color: "#D3D3D3" },
+      ":hover": { color: "white" },
       transition: "color 200ms ease-in-out",
     }}
     {...props}

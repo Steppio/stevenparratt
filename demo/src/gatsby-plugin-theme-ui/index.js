@@ -1,3 +1,7 @@
+import commonUtilityClasses from "./commonUtilityClasses"
+import textStyles from "./textStyles"
+import Dicknose from "./mobileNav"
+
 /**
  * This theme uses `theme-ui` under the hood.
  * @see https://theme-ui.com/
@@ -7,15 +11,16 @@ export default {
   breakpoints: ["36rem", "52rem", "64rem"],
   colors: {
     text: "#fff",
-    heading: "#01558C",
+    heading: "#59E19F",
     background: "#333",
-    primary: "#639",
+    primary: "#59E19F",
     // secondary: "#4E7",
-    secondary: "#048B7E",
+    secondary: "#59E19F",
     muted: "#535159",
     light: "#C6C3C9",
     white: "#fff"
   },
+  textStyles,
   fonts: {
     body:
       '"Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
@@ -32,40 +37,15 @@ export default {
     text: "1.45",
     heading: "1.1",
   },
-  textStyles: {
-    display: {
-      fontFamily: "heading",
-      fontWeight: "heading",
-      lineHeight: "1.3",
-      fontSize: 7,
-    },
-    heading: {
-      fontFamily: "heading",
-      fontWeight: "heading",
-      lineHeight: "heading",
-    },
-    body: {
-      fontFamily: "body",
-      fontWeight: "body",
-      lineHeight: "body",
-      fontSize: 3,
-    },
-    quote: {
-      fontFamily: "body",
-      fontWeight: "body",
-      lineHeight: "body",
-      fontSize: 4,
-    },
-    fontAwesome: {
-      fontFamily: '"Font Awesome 5 Free"',
-      fontWeight: 900,
-    },
-  },
   sizes: {
     container: 1280,
   },
   space: [0, 8, 16, 32, 64, 128, 256],
   styles: {
+    root: {
+      ...commonUtilityClasses,
+      background: "background",
+    },
     Layout: {
       backgroundColor: "background",
       color: "text",
@@ -74,10 +54,102 @@ export default {
       lineHeight: "text",
     },
     Header: {
-      backgroundColor: "secondary",
-      color: "background",
+      ":hover": {
+        // background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(68,68,68,1) 0%, rgba(51,51,51,1) 100%)",
+      },
+      '.mobileNav': {
+        '#menuToggle': {
+          a: {
+            ':hover': {
+              color: 'secondary'
+            },
+            textDecoration: 'none',
+            color: '#232323',
+            transition: 'color 0.3s ease'
+          },
+          '#menu': {
+            li: {
+              padding: '10px 0',
+              fontSize: '22px',            
+            },
+            a: {
+              display: 'block', 
+              borderBottom: 'initial',
+            },
+            width: '100%',
+            height: '100vh',
+            position: 'absolute',
+            m: '-100px 0 0 -50px',
+            p: '50px',
+            pt: '125px',
+            background: '#ededed',
+            listStyleType: 'none',
+            fontSmoothing: 'antialiased',
+            transformOrigin: '0% 0%',
+            transform: 'translate(-100%, 0)',
+            transition: 'transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0)',          
+          },          
+          input: {
+            ":checked ~ span": {
+              opacity: '1',
+              transform: 'rotate(45deg) translate(-2px, -1px)',
+              background: '#232323',
+            },
+            ":checked ~ span:nth-last-child(3)": {
+              opacity: '0',
+              transform: 'rotate(0deg) scale(0.2, 0.2)',
+            },
+            ":checked ~ span:nth-last-child(2)": {
+              transform: 'rotate(-45deg) translate(0, -1px)',
+            },
+            ":checked ~ ul": {
+              transform: 'none !important',
+            },
+            display: 'block',
+            width: '40px',
+            height: '32px',
+            position: 'absolute',
+            top: '-7px',
+            left: '-5px',
+            cursor: 'pointer',
+            opacity: '0',
+            zIndex: '2',
+            touchCallout: 'none'
+          },          
+          span: {
+            ":first-child": {
+              transformOrigin: '0% 0%',
+            },
+            ":nth-last-child(2)": {
+              transformOrigin: '0% 100%',
+            },
+            display: 'block',
+            width: '33px',
+            height: '4px',
+            mb: '5px',
+            position: 'relative',
+            background: '#cdcdcd',
+            borderRadius: '3px',
+            zIndex: '1',
+            transformOrigin: '4px 0px',
+            transition: 'transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease',
+          },
+          display: 'block',
+          position: 'relative',
+          top: '50px',
+          left: '50px',
+          zIndex: '1',
+          userSelect: 'none',
+        },
+        display: ['block', 'block', 'block', 'none']
+      },      
+      // backgroundColor: "secondary",
+      background: "rgb(2,0,36)",
+      background: "linear-gradient(180deg, rgba(2,0,36,0.75) 0%, rgba(68,68,68,0.75) 0%, rgba(51,51,51,0.75) 100%)",
       fontWeight: "bold",
       margin: 0,
+      position: 'fixed',    
+      width: '100%',
       h1: {
         color: "white",
         fontFamily: "heading",
@@ -88,25 +160,40 @@ export default {
         margin: '0'
       },
       nav: {
+        display: ['none', 'none', 'none', 'flex'],
         margin: "auto",
         width: "container",
-        padding: 3,
-        display: "flex",
-        maxWidth: '500px',
+        padding: "0px",
+        maxWidth: '560px',
         float: 'right',
         pr: '0',
         justifyContent: "space-between",
         a: {
-          padding: 1,
-          color: "white",
+          padding: "33px",
+          color: "secondary",
           textDecoration: "none",
           fontWeight: '100',
           letterSpacing: '0.2em',
           fontSize: '1.25em',
+          margin: '0 5px',
           fontFamily: "heading",
         },
+        "a:hover": {
+          background: "#333",
+          color: "white",
+          borderBottom: "5px dashed",
+          borderColor: "white"       
+        },
+        "a:last-child": {
+          background: "muted"
+        },
         "a[aria-current='page']": {
-          borderBottom: "2px solid",
+          borderBottom: "5px dashed",
+          borderColor: "secondary",
+          background: "muted",
+          color: "white"
+        },
+        "a[aria-current='page']:hover": {
           borderColor: "white",
         },
       },
@@ -115,19 +202,25 @@ export default {
       h1: {
         span: {
           fontSize: '3.5em',
-          color: 'secondary',
-        },
+          color: 'white',
+          fontStyle: 'normal'
+        },   
+        fontStyle: 'oblique',
         fontSize: '2.75em',
-        color: 'white'
+        color: 'secondary'
       },  
       h2: {
-        fontSize: '2.75em'
+        fontSize: '2.75em',
+        color: "secondary"
       },
       margin: "0 auto",
       maxWidth: "container",
       width: "90vw",
     },
     Container: {
+      img: {
+        width: "100%",
+      },
       padding: 0,
       maxWidth: "container",
     },
@@ -159,6 +252,8 @@ export default {
     },
     p: {
       variant: "textStyles.body",
+      fontSize: "1.55em",
+      lineHeight: "1.6em"
     },
     a: {
       variant: "textStyles.body",
