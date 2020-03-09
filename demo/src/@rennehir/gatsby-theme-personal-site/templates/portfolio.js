@@ -10,8 +10,13 @@ const PortfolioTemplate = ({ data: { items } }) => {
   return (
     <Layout>
       <SEO postMeta={{ title: "Portfolio" }} />
-      <Styled.h1>Portfolio</Styled.h1>
-      <Portfolio items={items.nodes} />
+      <div className="inside-header">
+        <Styled.h1>Benefits</Styled.h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra, leo sit amet viverra sagittis, mi tellus pulvinar nunc, sit amet faucibus tortor quam vulputate velit. </p>
+      </div>
+      <div className="inside-list">
+        <Portfolio items={items.nodes} />
+      </div>
     </Layout>
   )
 }

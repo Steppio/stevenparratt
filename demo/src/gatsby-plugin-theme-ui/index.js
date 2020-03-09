@@ -13,7 +13,6 @@ export default {
     heading: "#59E19F",
     background: "#333",
     primary: "#59E19F",
-    // secondary: "#4E7",
     secondary: "#59E19F",
     muted: "#535159",
     light: "#C6C3C9",
@@ -22,24 +21,14 @@ export default {
   textStyles,
   fonts: {
     body:
-      '"Spartan", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"',
-    heading: '"Spartan", Roboto, Helvetica, sans-serif',
+      '"Nunito Sans", sans-serif", "Segoe UI Emoji", "Segoe UI Symbol"',
+    heading: '"Nunito Sans", sans-serif' ,
     fontAwesome: "FontAwesome",
   },
-  // fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  // fontWeights: {
-  //   body: 400,
-  //   heading: 900,
-  //   bold: 700,
-  // },
-  // lineHeights: {
-  //   text: "1.45",
-  //   heading: "1.1",
-  // },
   sizes: {
     container: 1280,
   },
-  space: [0, 8, 16, 32, 64, 128, 256],
+  space: [0, 8, 16, 32, 64, 96, 128, 256],
   styles: {
     root: {
       ...commonUtilityClasses,
@@ -52,9 +41,6 @@ export default {
       lineHeight: "text",
     },
     Header: {
-      ":hover": {
-        // background: "linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(68,68,68,1) 0%, rgba(51,51,51,1) 100%)",
-      },
       '.mobileNav': {
         '#menuToggle': {
           a: {
@@ -62,8 +48,7 @@ export default {
               color: 'secondary'
             },
             textDecoration: 'none',
-            color: '#232323',
-            transition: 'color 0.3s ease'
+            transition: 'color 0.3s ease',
           },
           '#menu': {
             li: {
@@ -77,10 +62,9 @@ export default {
             width: '100%',
             height: '100vh',
             position: 'absolute',
-            m: '-100px 0 0 -50px',
-            p: '50px',
+            m: '-67px 0 0 -50px',
             pt: '125px',
-            background: '#ededed',
+            pl: '0.5em',
             listStyleType: 'none',
             fontSmoothing: 'antialiased',
             transformOrigin: '0% 0%',
@@ -96,7 +80,6 @@ export default {
             ":checked ~ span": {
               opacity: '1',
               transform: 'rotate(45deg) translate(-2px, -1px)',
-              background: '#232323',
             },
             ":checked ~ span:nth-last-child(3)": {
               opacity: '0',
@@ -139,14 +122,13 @@ export default {
           },
           display: 'block',
           position: 'relative',
-          top: '30px',
-          left: '25px',
+          top: '40px',
+          left: '1em',
           zIndex: '1',
           userSelect: 'none',
         },
         display: ['block', 'block', 'block', 'none']
       },      
-      // backgroundColor: "secondary",
       background: "rgb(2,0,36)",
       background: "linear-gradient(180deg, rgba(2,0,36,0.75) 0%, rgba(68,68,68,0.75) 0%, rgba(51,51,51,0.75) 100%)",
       fontWeight: "bold",
@@ -170,9 +152,12 @@ export default {
         float: 'right',
         pr: '0',
         justifyContent: "space-between",
+        ul: {
+          backgroundColor: 'secondary',
+        },
         a: {
           padding: "33px",
-          color: "secondary",
+          color: "white",
           textDecoration: "none",
           fontWeight: '100',
           letterSpacing: '0.2em',
@@ -201,26 +186,25 @@ export default {
       },
     },
     Main: {
-      h1: {
-        span: {
-          fontSize: ['1.35em', '1.75em', '3.5em', '3.5em'],
-          color: 'white',
+      ".heroBanner": {
+        h1: {
+          span: {
+            fontSize: ['1.35em', '1.75em', '3.5em', '3.5em'],
+            color: 'white',
+            textAlign: 'center',
+            ml: ['10px', '10px', '0', '0'],
+            fontStyle: 'normal',
+          },
+          mb: ['25px', '25px', '2em', '2em'],
           textAlign: 'center',
-          ml: ['10px', '10px', '0', '0'],
-          fontStyle: 'normal',
+          color: 'secondary'
+        },  
+        h2: {
+          color: "secondary",
+          textAlign: ['center', 'center', 'left', 'left'],
+          mt: ['22px', '22px', '25px', '25px'],
+          mb: ['10px', '10px', '1.666rem', '1.666rem'],
         },
-        fontStyle: 'oblique',
-        fontSize: ['1.75em', '1.75em', '2.25em', '2.75em'],
-        mb: ['0', '2em'],
-        textAlign: 'center',
-        color: 'secondary'
-      },  
-      h2: {
-        fontSize: ['1.75em', '1.75em', '2.25em', '2.75em'],
-        color: "secondary",
-        textAlign: ['center', 'center', 'left', 'left'],
-        mt: ['22px', '22px', '25px', '25px'],
-        mb: ['10px', '10px', '1.666rem', '1.666rem'],
       },
       ".about-section": {
         a: {
@@ -233,8 +217,85 @@ export default {
           minWidth: '49%',
           p: ['15px 10px', '15px 10px', '1.05rem 3rem', '1.05rem 3rem']
         },
-
+        "@media (max-width: 36rem)": {
+          a: {
+            minWidth: '100%',
+          },
+        },
       },
+      "#aboutSection": {
+        p: {
+          ":last-child": {
+            mb: ['0px !important']
+          },
+        },
+      },
+      ".home-services, .benefits-page": {
+        h3: {
+          "@media (max-width: 36rem)": {
+            textAlign: 'center',
+          },
+          m: ['20px 0 30px'],
+          color: 'secondary'
+        },
+        p: {
+          mb: ['5px'],
+        },
+        a: {
+          m: ['20px 0 30px !important']
+        }
+      },
+      h2: {
+        textAlign: ['center', 'center', 'center', 'center'],
+      },
+
+      ".referencesContainer, .blogContainer": {
+        "> section": {
+          float: 'none',
+          clear: 'both'
+        },
+      },
+
+      //blog
+      ".blogContainer": {
+        h3: {
+          mb: 0,
+        },
+        a: {
+          borderBottom: '1px dashed rgba(255,255,255,0.5)',
+        },
+        "a:nth-last-of-type(1)": {
+           borderBottom: '1px dashed rgba(255,255,255,0)',
+        },
+      },
+
+      // inside pages
+      ".inside-header": {
+        h1: {
+          color: "secondary"
+        },
+        textAlign: 'center',
+        pt: 5,
+      },
+      ".inside-list": {
+        h2: {
+          display: 'none'
+        },
+      },
+      ".inside-list > section": {
+        pt: 0
+      },
+
+      // Contact
+      ".contact_form": {
+        maxWidth: '600px',
+        margin: '0 auto'
+      },
+      ".constrain_content": {
+        maxWidth: '600px',
+        m: '0 auto'
+      },
+
       margin: "0 auto",
       maxWidth: "container",
       width: "90vw",
@@ -246,11 +307,6 @@ export default {
       padding: 0,
       maxWidth: "container",
     },
-    // p: {
-    //   variant: "textStyles.body",
-    //   fontSize: "1.55em",
-    //   lineHeight: "1.6em"
-    // },
     a: {
       variant: "textStyles.body",
       color: "primary",

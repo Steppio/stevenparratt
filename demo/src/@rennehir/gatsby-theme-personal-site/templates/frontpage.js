@@ -9,6 +9,7 @@ import Blog from "../components/sections/blog-section"
 import About from "../components/sections/about-section"
 import References from "../components/sections/reference-section"
 import Services from "../components/sections/service-section"
+import Contact from "../components/contact/contact"
 import HomeButtons from "../components/sections/home-buttons"
 
 const FrontpageTemplate = ({ data, pageContext }) => {
@@ -21,18 +22,25 @@ const FrontpageTemplate = ({ data, pageContext }) => {
     <Layout>
       <Hero {...hero} />
       <HomeButtons />
-      <About />
+      <div className="blogContainer">
+        <About />
+      </div>
       <Services services={services.nodes} />
-      <Blog
-        title="Latest from the blog"
-        posts={posts.nodes}
-        basePath={blogBasePath}
-      />
-      <References
-        title="References"
-        references={references.nodes}
-        basePath={referencesBasePath}
-      />
+      <div className="blogContainer">
+        <Blog
+          title="Latest from the blog"
+          posts={posts.nodes}
+          basePath={blogBasePath}
+        />
+      </div>
+      <div className="referencesContainer">
+        <References
+          title="References"
+          references={references.nodes}
+          basePath={referencesBasePath}
+        />
+      </div>
+      <Contact />
     </Layout>
   )
 }

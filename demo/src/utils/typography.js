@@ -1,15 +1,15 @@
 import Typography from "typography"
 const typography = new Typography({
-  baseFontSize: "22px",
+  baseFontSize: "20px",
   baseLineHeight: 1.666,
   headerFontFamily: [
-    "Avenir Next",
+    "Nunito Sans",
     "Helvetica Neue",
     "Segoe UI",
     "Helvetica",
     "Arial",
     "sans-serif",
   ],
-  bodyFontFamily: ["Georgia", "serif"],
+  bodyFontFamily: ["Nunito Sans", "sans serif"],
 })
 export default typography

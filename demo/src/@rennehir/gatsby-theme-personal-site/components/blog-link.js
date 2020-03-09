@@ -12,29 +12,14 @@ const BlogLink = ({ title, slug, date, cover }) => {
   return (
     <S.Link
       to={slug}
-      sx={{ my: 0, flexBasis: ["100%", "100%", "50%"] }}
+      sx={{ my: 0 }}
       onMouseEnter={() => setZoomed(true)}
       onMouseLeave={() => setZoomed(false)}
     >
       <S.Container>
-        <Image
-          image={cover}
-          style={{
-            position: "absolute",
-            left: 0,
-            top: 0,
-            height: "100%",
-            width: "100%",
-            backgroundImage:
-              "linear-gradient(rgba(0, 0, 0, 0.1), rgba(255, 0, 0, 0.7))",
-            transition: "transform 800ms ease",
-            transform: `scale(${zoomed ? 1 : 1.15})`,
-          }}
-        />
         <S.Overlay zoomed={zoomed} />
-        <S.Content sx={{ mt: 5, px: 2, py: 2 }}>
+        <S.Content sx={{  px: 2, py: 2 }}>
           <Styled.h3>{title}</Styled.h3>
-          <Styled.p sx={{ fontSize: 2 }}>Published {date}</Styled.p>
         </S.Content>
       </S.Container>
     </S.Link>
@@ -69,7 +54,6 @@ S.Link = styled(Link)`
 `
 
 S.Overlay = styled.div`
-  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.8));
   position: absolute;
   top: 0;
   left: 0;
@@ -83,7 +67,6 @@ S.Container = styled.div`
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  border: 1px solid black;
   box-sizing: border-box;
   height: 100%;
   display: flex;

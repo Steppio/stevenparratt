@@ -15,26 +15,32 @@ module.exports = {
         siteUrl: "https://gatsby-theme-personal-site.netlify.com",
         // Set your page's content's base paths
         blogBasePath: "/blog", // default: /blog
-        portfolioBasePath: "/portfolio", // default: /portfolio
+        portfolioBasePath: "/benefits", // default: /portfolio
         referencesBasePath: "/references", // default: /references
         servicesBasePath: "/services", // default: /services
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-prefetch-google-fonts`,
-    //   options: {
-    //     fonts: [
-    //       {
-    //         family: `Spartan`,
-    //         variants: [`400`, `700`]
-    //       },
-    //       {
-    //         family: `Roboto`,
-    //         subsets: [`latin`]
-    //       },
-    //     ],
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-160066070-1",
+      },
+    },    
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Nunito Sans`,
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Nunito Sans`,
+            subsets: [`latin`]
+          },
+        ],
+      },
+    },
     `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-react-svg",
@@ -43,7 +49,13 @@ module.exports = {
           include: `${__dirname}/content/assets/`,
         }
       }
-    },     
+    },
+    {
+      resolve: `gatsby-plugin-mailchimp`,
+      options: {
+          endpoint: `https://stevenparratt.us19.list-manage.com/subscribe/post?u=3096cb9893133c1cf1688eccf&amp;id=e0a18b0fb4`,
+      },
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {

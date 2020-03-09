@@ -1,5 +1,6 @@
 import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
+import AniLink from "gatsby-plugin-transition-link/AniLink"
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
@@ -20,9 +21,9 @@ const Navigation = () => {
   return (
     <nav>
       {data.allSitePage.nodes.map(page => (
-        <Link to={page.path} key={page.id}>
+        <AniLink cover bg="#663399" duration={1} to={page.path} key={page.id}>
           {page.context.heading}
-        </Link>
+        </AniLink>
       ))}
     </nav>
   )

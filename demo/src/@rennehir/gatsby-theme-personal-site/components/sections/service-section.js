@@ -8,8 +8,8 @@ import Service from "../service"
 const ServiceSection = ({ services }) => {
   return (
     <Section>
-      <h1>Services</h1>
-      <S.Container>
+      <h2>Services</h2>
+      <S.Container className="home-services">
         {services.map(service => (
           <Service {...service} />
         ))}

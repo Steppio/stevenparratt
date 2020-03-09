@@ -24,9 +24,7 @@ S.Link = styled(Link)`
   border-radius: 2px;
   letter-spacing: 0.25em;
   font-weight: 700;
-  font-size: 1.25em;
   margin: 25px 0 0 !important;
-  filter: brightness(1.15);
 
   color: ${({ theme }) => theme.colors["background"]};
   text-decoration: none;
@@ -34,10 +32,10 @@ S.Link = styled(Link)`
   text-align: center;
   transition: all 200ms ease-in-out;
   color: ${({ theme }) => theme.colors["secondary"]};
-  border: 3px solid ${({ theme }) => theme.colors["secondary"]};
+  border: 2px solid ${({ theme }) => theme.colors["secondary"]};
 
   @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-    font-size: 0.95em;
+    font-size: 0.75em;
     min-width: 185px;
     padding: 15px 10px;
 
@@ -46,6 +44,6 @@ S.Link = styled(Link)`
   :hover {
     filter: brightness(1);
     color: ${({ theme }) => theme.colors["white"]};
-    border: 3px solid ${({ theme }) => theme.colors["white"]};
+    border: 2px solid ${({ theme }) => theme.colors["white"]};
   }
 `

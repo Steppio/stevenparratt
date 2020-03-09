@@ -22,9 +22,7 @@ const ServiceTemplate = ({ pathContext: { basePaths }, data: { service } }) => {
         />
       )}
       <Styled.h1>{title}</Styled.h1>
-      <MDXRenderer sx={{
-        minHeight: "105px"
-      }}>{body}</MDXRenderer>
+      <MDXRenderer>{body}</MDXRenderer>
       <Link to={basePaths.servicesBasePath} sx={{ mt: 4 }}>
         See all services
       </Link>

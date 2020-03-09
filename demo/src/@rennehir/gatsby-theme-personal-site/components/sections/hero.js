@@ -9,7 +9,7 @@ import "../layout.css"
 
 const Hero = ({ greeting, name, subtitle, image }) => {
   return (
-    <S.Section sx={{ }} bg={BlobUrl}>
+    <S.Section className="heroBanner" sx={{ }} bg={BlobUrl}>
       <S.ImageContainer>
         <Image sx={{ my: 0 }} image={image} alt={image.imageAltText} />
       </S.ImageContainer>

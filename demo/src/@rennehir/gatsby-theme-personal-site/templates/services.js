@@ -10,8 +10,13 @@ const ServicesTemplate = ({ data: { services } }) => {
   return (
     <Layout>
       <SEO postMeta={{ title: "Services" }} />
-      <Styled.h1>Services</Styled.h1>
-      <Services services={services.nodes} />
+      <div className="inside-header">
+        <Styled.h1>Services</Styled.h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer pharetra, leo sit amet viverra sagittis, mi tellus pulvinar nunc, sit amet faucibus tortor quam vulputate velit. </p>
+      </div>
+      <div className="inside-list">
+        <Services services={services.nodes} />
+      </div>
     </Layout>
   )
 }

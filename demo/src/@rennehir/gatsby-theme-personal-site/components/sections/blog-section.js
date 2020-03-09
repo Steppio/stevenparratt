@@ -10,7 +10,7 @@ const BlogSection = ({ title, posts, basePath }) => {
   return (
     <Section>
       {title && <Styled.h2>{title}</Styled.h2>}
-      <S.Container sx={{ my: 3 }}>
+      <S.Container className="constrain_content"  sx={{ my: 3 }}>
         {posts.map(post => (
           <BlogLink key={post.id} {...post} />
         ))}

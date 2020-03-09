@@ -21,7 +21,7 @@ const ReferenceSection = ({ title, references, basePath }) => {
   }
 
   return (
-    <Section>
+    <Section sx={{ float: 'none' }}>
       {title && <Styled.h2 sx={{ textAlign: "center" }}>{title}</Styled.h2>}
       <Slider {...settings} sx={{ my: 3 }}>
         {references.map(ref => (

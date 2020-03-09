@@ -10,7 +10,7 @@ const PortfolioSection = ({ title, items, basePath }) => {
   return (
     <Section>
       {title && <Styled.h2>{title}</Styled.h2>}
-      <S.Container>
+      <S.Container className="benefits-page">
         {items.map(item => (
           <PortfolioLink key={item.id} {...item} />
         ))}

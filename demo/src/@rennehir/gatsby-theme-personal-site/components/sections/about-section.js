@@ -9,18 +9,8 @@ const AboutSection = ({ }) => {
 
   return (
     <Section>
-      <Container sx={{
-      maxWidth: '600px',
-      m: '80px auto 0',
-      pt: '80px',
-      borderTop: '5px dashed white'
-    }}>
-        <h1 sx={{
-          textAlign: 'center',
-          color: 'secondary !important',
-          fontStyle: 'normal !important'
-        }}>About me</h1>
-        <br />
+      <Container id="aboutSection" className="constrain_content">
+        <h2>About me</h2>
         <p>Hi my name is Steven Parratt but you can call me Ste. I've been developing webs for
         a long time, and have a huge passion for quality code. I enjoy creating ultra high-perfomant 
         websites with an emphasis on speed and usability.</p>
