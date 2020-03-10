@@ -1,5 +1,3 @@
-import checkBox from './components/checkBox'
-
 const contactForm = {
 	".contactContainer > section": {
 		width: '100%'
@@ -24,9 +22,6 @@ const contactForm = {
 	".constrain_content": {
 		maxWidth: '600px',
 		m: '0 auto'
-	},
-	".wpcf7-list-item": {
-		...checkBox,
 	}
 }
 
