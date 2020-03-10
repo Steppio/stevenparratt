@@ -201,7 +201,7 @@ export default {
       },
     },
     Main: {
-      ".heroBanner": {
+      ".heroBanner": {        
         h1: {
           span: {
             fontSize: ['1.35em', '1.75em', '3.5em', '3.5em'],
@@ -221,6 +221,32 @@ export default {
           mt: ['22px', '22px', '25px', '25px'],
           mb: ['10px', '10px', '1.666rem', '1.666rem'],
         },
+        "@media (max-width: 64rem)": {
+          "h1": {
+            "span": {
+              fontSize: '2.2em',
+              textAlign: 'center',
+              marginLeft: '0px',
+              display: 'block',
+              borderBottom: '0px'              
+            },
+            fontSize: "1em",
+            textAlign: "right",
+            m: '20px 0 0', 
+            float: 'right'
+          },
+          "h2": {
+            textAlign: 'right',
+            marginTop: '0px',
+            marginBottom: '10px',
+            fontSize: '0.62em',
+            clear: 'both'
+          },
+          "img": {
+            padding: '40px 0 20px'
+          },
+          p: '0'
+        },        
       },
       ".about-section": {
         a: {
