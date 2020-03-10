@@ -11,7 +11,7 @@ const Hero = ({ greeting, name, subtitle, image }) => {
   return (
     <S.Section className="heroBanner" sx={{ }} bg={BlobUrl}>
       <S.ImageContainer>
-        <Image sx={{ my: 0 }} image={image} alt={image.imageAltText} />
+        <Image sx={{ my: 0, minHeight: '400px' }} image={image} alt={image.imageAltText} />
       </S.ImageContainer>
       <S.TextContainer>
         <Styled.h1 sx={{ variant: "textStyles.display", color: 'white' }}>

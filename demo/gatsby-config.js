@@ -9,9 +9,10 @@ module.exports = {
     {
       resolve: "@rennehir/gatsby-theme-personal-site",
       options: {
-        siteTitle: "Steven Parratt",
+        siteTitle: "Steven Parratt - Freelance Web Developer",
         siteDescription:
           "Freelance Web Developer based in Liverpool, England. I produce ultra-performant web apps.",
+        siteUrl: "https://gatsby-theme-personal-site.netlify.com",
         // Set your page's content's base paths
         blogBasePath: "/blog", // default: /blog
         portfolioBasePath: "/benefits", // default: /portfolio
