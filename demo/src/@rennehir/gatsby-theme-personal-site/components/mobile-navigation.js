@@ -34,7 +34,7 @@ const Navigation = () => {
 
         <ul id="menu">
           {data.allSitePage.nodes.map(page => (
-            <AniLink cover bg="#663399" duration={1} to={page.path} key={page.id}>
+            <AniLink paintDrip bg="#59E19F" hex="#59E19F" duration={0.75} to={page.path} key={page.id}>
               {page.context.heading}
             </AniLink>
           ))}

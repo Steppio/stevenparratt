@@ -16,10 +16,11 @@ const BlogLink = ({ title, slug, date, cover }) => {
       onMouseEnter={() => setZoomed(true)}
       onMouseLeave={() => setZoomed(false)}
     >
-      <S.Container>
+      <S.Container className="blogListing">
         <S.Overlay zoomed={zoomed} />
-        <S.Content sx={{  px: 2, py: 2 }}>
+        <S.Content sx={{  px: 2, py: 2, pl: '0', position: 'relative' }}>
           <Styled.h3>{title}</Styled.h3>
+          <p>{ date }</p>
         </S.Content>
       </S.Container>
     </S.Link>

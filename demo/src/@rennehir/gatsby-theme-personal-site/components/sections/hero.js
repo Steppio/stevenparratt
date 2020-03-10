@@ -14,10 +14,10 @@ const Hero = ({ greeting, name, subtitle, image }) => {
         <Image sx={{ my: 0 }} image={image} alt={image.imageAltText} />
       </S.ImageContainer>
       <S.TextContainer>
-        <Styled.h1 sx={{ variant: "textStyles.display" }}>
+        <Styled.h1 sx={{ variant: "textStyles.display", color: 'white' }}>
           {greeting} <S.Name>{name}</S.Name>
         </Styled.h1>
-        <Styled.h2>{subtitle}</Styled.h2>
+        <Styled.h2 sx={{ color: 'white', textAlign: 'center' }}>{subtitle}</Styled.h2>
       </S.TextContainer>
     </S.Section>
   )
@@ -51,7 +51,7 @@ S.Section = styled.section`
   background-repeat: no-repeat;
   background-position: 0% 33%;
   background-size: 50%;
-  padding: 100px 0 0 0;
+  padding: 120px 0 0 0;
   margin-bottom: 0px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {

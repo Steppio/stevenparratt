@@ -2,6 +2,7 @@ import React from "react"
 import validator from 'email-validator'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import Link from "gatsby-link"
+import styled from "@emotion/styled"
 
 class ContactForm extends React.Component {
   render() {
@@ -33,9 +34,9 @@ class ContactForm extends React.Component {
 		        </label>
 
 		        <label className='mr3'>
-		            <input type='text' name='message' placeholder='message' className={`${showEmailError ? 'pv2 ba b--light-red' : ''}`}
+		            <textarea type='text' name='message' placeholder='message' className={`${showEmailError ? 'pv2 ba b--light-red' : ''}`}
 		              ref={node => (this.messageNode = node)}
-		            />
+		            ></textarea>
 		        </label>
 
 				<p>
@@ -49,7 +50,7 @@ class ContactForm extends React.Component {
 					</span>
 				</p>
 
-		        <button className='wpcf7-form-control wpcf7-submit'>
+		        <button className='buttonStyles'>
 		        	Message me
 		        </button>
 	      	</form>
@@ -125,3 +126,48 @@ export default class Form extends React.Component {
 		)
 	}
 }
+
+
+const S = {}
+
+S.Button = styled(Link)`
+  --bg-color: ${({ theme }) => theme.colors["white"]};
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: ${({ theme }) => theme.colors["background"]};
+  padding: 1.05rem 3rem;
+  border-radius: 2px;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  margin: 25px 0 0 !important;
+
+  color: ${({ theme }) => theme.colors["background"]};
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 200ms ease-in-out;
+  color: ${({ theme }) => theme.colors["secondary"]};
+  border: 2px solid ${({ theme }) => theme.colors["secondary"]};
+  border-top: 0px;
+  border-bottom: 0px;
+  background: rgba(255,255,255,0.025);
+
+  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    font-size: 0.75em;
+    min-width: 185px;
+    padding: 15px 10px;
+    width: 100%;  
+
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    font-size: 0.75em;
+  }
+
+  :hover {
+    filter: brightness(1);
+    color: ${({ theme }) => theme.colors["white"]};
+    border-left: 2px solid ${({ theme }) => theme.colors["white"]};
+    border-right: 2px solid ${({ theme }) => theme.colors["white"]};
+    background: ${({ theme }) => theme.colors["secondary"]};
+  }
+`

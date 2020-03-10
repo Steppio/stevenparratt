@@ -21,7 +21,7 @@ const Navigation = () => {
   return (
     <nav>
       {data.allSitePage.nodes.map(page => (
-        <AniLink cover bg="#663399" duration={1} to={page.path} key={page.id}>
+        <AniLink paintDrip bg="#333" hex="#333" duration={0.6} to={page.path} key={page.id}>
           {page.context.heading}
         </AniLink>
       ))}

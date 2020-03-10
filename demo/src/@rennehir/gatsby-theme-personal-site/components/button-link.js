@@ -33,17 +33,26 @@ S.Link = styled(Link)`
   transition: all 200ms ease-in-out;
   color: ${({ theme }) => theme.colors["secondary"]};
   border: 2px solid ${({ theme }) => theme.colors["secondary"]};
+  border-top: 0px;
+  border-bottom: 0px;
+  background: rgba(255,255,255,0.025);
 
   @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
     font-size: 0.75em;
     min-width: 185px;
     padding: 15px 10px;
+    width: 100%;  
 
+  }
+  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
+    font-size: 0.75em;
   }
 
   :hover {
     filter: brightness(1);
     color: ${({ theme }) => theme.colors["white"]};
-    border: 2px solid ${({ theme }) => theme.colors["white"]};
+    border-left: 2px solid ${({ theme }) => theme.colors["white"]};
+    border-right: 2px solid ${({ theme }) => theme.colors["white"]};
+    background: ${({ theme }) => theme.colors["secondary"]};
   }
 `

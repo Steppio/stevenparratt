@@ -9,7 +9,6 @@ const ReferenceLink = ({ name, excerpt, image }) => {
   return (
     <S.Article sx={{ my: 3 }}>
       <Styled.blockquote>{excerpt}</Styled.blockquote>
-      <S.Image image={image} alt={name} />
       <Styled.h4>{name}</Styled.h4>
     </S.Article>
   )

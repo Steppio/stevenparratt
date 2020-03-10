@@ -1,5 +1,9 @@
 import commonUtilityClasses from "./commonUtilityClasses"
 import textStyles from "./textStyles"
+import contactForm from "./contactForm"
+import buttonStyle from './components/buttonStyle'
+import benefitsPage from './pages/benefits'
+import insideService from './pages/inside-services'
 
 /**
  * This theme uses `theme-ui` under the hood.
@@ -28,7 +32,7 @@ export default {
   sizes: {
     container: 1280,
   },
-  space: [0, 8, 16, 32, 64, 96, 128, 256],
+  space: [0, 8, 16, 32, 64, 120, 128, 256],
   styles: {
     root: {
       ...commonUtilityClasses,
@@ -56,8 +60,15 @@ export default {
               fontSize: '22px',            
             },
             a: {
+              ":hover": {
+                color: 'secondary'
+              },
               display: 'block', 
               borderBottom: 'initial',
+              textAlign: 'center',
+              maxWidth: '400px',
+              margin: '0 auto',
+              color: 'background'      
             },
             width: '100%',
             height: '100vh',
@@ -65,6 +76,7 @@ export default {
             m: '-67px 0 0 -50px',
             pt: '125px',
             pl: '0.5em',
+            backgroundColor: 'white',
             listStyleType: 'none',
             fontSmoothing: 'antialiased',
             transformOrigin: '0% 0%',
@@ -114,7 +126,7 @@ export default {
             height: '4px',
             mb: '5px',
             position: 'relative',
-            background: 'white',
+            backgroundColor: 'secondary',
             borderRadius: '3px',
             zIndex: '1',
             transformOrigin: '4px 0px',
@@ -127,13 +139,18 @@ export default {
           zIndex: '1',
           userSelect: 'none',
         },
-        display: ['block', 'block', 'block', 'none']
+        display: ['block', 'block', 'block', 'block']
       },      
-      background: "rgb(2,0,36)",
-      background: "linear-gradient(180deg, rgba(2,0,36,0.75) 0%, rgba(68,68,68,0.75) 0%, rgba(51,51,51,0.75) 100%)",
+      "> div": {
+        maxWidth: '100%'
+      },
+      background: "transparent",
+      // background: "linear-gradient(180deg, rgba(2,0,36,0.75) 0%, rgba(68,68,68,0.75) 0%, rgba(51,51,51,0.75) 100%)",
       fontWeight: "bold",
       margin: 0,
-      position: 'fixed',    
+      position: 'fixed', 
+      width: '100%',
+
       h1: {
         color: "white",
         fontFamily: "heading",
@@ -144,12 +161,10 @@ export default {
         margin: '0'
       },
       nav: {
-        display: ['none', 'none', 'none', 'flex'],
+        display: ['none', 'none', 'none', 'none'],
         margin: "auto",
-        width: "container",
+        width: "100%",
         padding: "0px",
-        maxWidth: '560px',
-        float: 'right',
         pr: '0',
         justifyContent: "space-between",
         ul: {
@@ -166,8 +181,8 @@ export default {
           fontFamily: "heading",
         },
         "a:hover": {
-          background: "#333",
-          color: "white",
+          background: "rgba(0,0,0,0.025)",
+          color: "secondary",
           borderBottom: "5px dashed",
           borderColor: "white"       
         },
@@ -190,18 +205,19 @@ export default {
         h1: {
           span: {
             fontSize: ['1.35em', '1.75em', '3.5em', '3.5em'],
-            color: 'white',
+            color: 'secondary',
             textAlign: 'center',
             ml: ['10px', '10px', '0', '0'],
             fontStyle: 'normal',
+            borderBottom: '4px solid white',
           },
           mb: ['25px', '25px', '2em', '2em'],
           textAlign: 'center',
-          color: 'secondary'
+          color: 'white'
         },  
         h2: {
-          color: "secondary",
-          textAlign: ['center', 'center', 'left', 'left'],
+          color: "white",
+          textAlign: ['center'],
           mt: ['22px', '22px', '25px', '25px'],
           mb: ['10px', '10px', '1.666rem', '1.666rem'],
         },
@@ -232,9 +248,9 @@ export default {
       },
       ".home-services, .benefits-page": {
         h3: {
-          "@media (max-width: 36rem)": {
+          // "@media (max-width: 36rem)": {
             textAlign: 'center',
-          },
+          // },
           m: ['20px 0 30px'],
           color: 'secondary'
         },
@@ -255,9 +271,60 @@ export default {
           clear: 'both'
         },
       },
+      ".referencesContainer": {
+        ".slick-dots": {
+          "li button": {
+            ":before": {
+              fontSize: '25px',
+              color: 'secondary'
+            },            
+          },
+        },
+        "article": {
+          maxWidth: '600px',
+          margin: '0 auto'
+        },
+      },
+
+      // home services
+      ".home-services": {
+        "h3": {
+          fontSize: '1em',
+        },
+        "img": {
+          maxWidth: '325px',
+          margin: '0 auto'         
+        },
+        "p": {
+          m: '0 auto',
+          textAlign: 'center',
+          p: '20px 25px',
+          maxWidth: '400px'
+        },
+        "a": {
+          maxWidth: '300px',
+          m: '20px auto 30px !important'
+        },
+      },
+
+      //benefits page
+      ".benefits-list": {
+        ...benefitsPage
+      },
+
+      //services inside page
+      ".inside-page": {
+        ...insideService
+      },
 
       //blog
       ".blogContainer": {
+        "> section > a": {
+          margin: '0 auto !important',
+          float: 'none',
+          display: 'block',
+          maxWidth: '300px',          
+        },
         h3: {
           mb: 0,
         },
@@ -266,6 +333,24 @@ export default {
         },
         "a:nth-last-of-type(1)": {
            borderBottom: '1px dashed rgba(255,255,255,0)',
+        },
+      },
+      ".blogListing": {
+        "p": {
+          position: 'absolute',
+          transform: 'rotate(-90deg)',
+          mb: '0px',
+          left: '-45px',
+          top: '59px',
+        }, 
+        "h3": {
+          ml: '46px',
+          color: 'secondary',
+          lineHeight: '1.45em',
+          mt: '-12px'
+        },
+        "> div": {
+          minHeight: '155px'
         },
       },
 
@@ -281,21 +366,21 @@ export default {
         h2: {
           display: 'none'
         },
+        "> section": {
+          float: 'initial',
+        },
       },
       ".inside-list > section": {
         pt: 0
       },
 
       // Contact
-      ".contact_form": {
-        maxWidth: '600px',
-        margin: '0 auto'
-      },
-      ".constrain_content": {
-        maxWidth: '600px',
-        m: '0 auto'
-      },
+      ...contactForm,
 
+      // button Styles
+      ".buttonStyles": {
+        ...buttonStyle,
+      },
       margin: "0 auto",
       maxWidth: "container",
       width: "90vw",
@@ -315,21 +400,25 @@ export default {
       maxWidth: "100%",
     },
     blockquote: {
-      variant: "textStyles.quote",
       position: "relative",
       padding: 0,
       margin: 0,
+      textAlign: 'center',
       marginBottom: 3,
       boxSizing: "border-box",
-      width: "75%", // Leave space for the quotes
+      width: "100%", // Leave space for the quotes
+      "h4": {
+        color: 'secondary',
+      },
       "::before, ::after": {
         variant: "textStyles.fontAwesome",
         position: "absolute",
         top: "0",
-        color: "light",
+        color: "secondary",
         display: "block",
         zIndex: -1,
         margin: 1,
+        display: ['none', 'none', 'block', 'block']
       },
       "::before": {
         content: '"\f10d"',

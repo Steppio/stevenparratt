@@ -40,7 +40,9 @@ const FrontpageTemplate = ({ data, pageContext }) => {
           basePath={referencesBasePath}
         />
       </div>
-      <Contact />
+      <div id="contactSection" className="contactContainer">
+        <Contact />
+      </div>
     </Layout>
   )
 }

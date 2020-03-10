@@ -11,7 +11,7 @@ const HomeButtons = () => {
         <ButtonLink to="#aboutSection" sx={{ variant: "textStyles.navLink", ml: "0" }}>
           About me
         </ButtonLink>
-        <ButtonLink to="" sx={{  variant: "textStyles.navLink" }}>
+        <ButtonLink to="#contactSection" sx={{  variant: "textStyles.navLink" }}>
           Contact me
         </ButtonLink> 
     </Container>
