@@ -32,7 +32,7 @@ S.Link = styled(Link)`
   text-align: center;
   transition: all 200ms ease-in-out;
   color: ${({ theme }) => theme.colors["secondary"]};
-  border: 2px solid ${({ theme }) => theme.colors["secondary"]};
+  border: 2px solid ${({ theme }) => theme.colors["white"]};
   border-top: 0px;
   border-bottom: 0px;
   background: rgba(255,255,255,0.025);

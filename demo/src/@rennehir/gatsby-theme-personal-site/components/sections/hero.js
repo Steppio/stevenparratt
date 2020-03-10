@@ -13,7 +13,7 @@ const Hero = ({ greeting, name, subtitle, image }) => {
       <S.ImageContainer>
         <Image sx={{ my: 0, minHeight: '400px' }} image={image} alt={image.imageAltText} />
       </S.ImageContainer>
-      <S.TextContainer>
+      <S.TextContainer className="headerLogo">
         <Styled.h1 sx={{ variant: "textStyles.display", color: 'white' }}>
           {greeting} <S.Name>{name}</S.Name>
         </Styled.h1>
@@ -47,7 +47,7 @@ S.Section = styled.section`
     "text"
     "image";
   grid-gap: ${props => props.theme.space[1]}px;
-  background-image: url(${props => props.bg});
+  
   background-repeat: no-repeat;
   background-position: 0% 33%;
   background-size: 50%;

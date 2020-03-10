@@ -32,7 +32,7 @@ export default {
   sizes: {
     container: 1280,
   },
-  space: [0, 8, 16, 32, 64, 120, 128, 256],
+  space: [0, 8, 16, 32, 64, 120, 128, 256, 180],
   styles: {
     root: {
       ...commonUtilityClasses,
@@ -221,7 +221,35 @@ export default {
           mt: ['22px', '22px', '25px', '25px'],
           mb: ['10px', '10px', '1.666rem', '1.666rem'],
         },
-        "@media (max-width: 64rem)": {
+        "@media (min-width: 64rem)": {
+          "h1": {
+            "span": {
+              borderBottom: '0px !important',
+              fontSize: '3.51em',
+              marginRight: '-10px',
+              lineHeight: '0.65em',
+            },
+            textAlign: 'right',
+            mb: 0,
+
+          },
+          "h2": {
+            textAlign: 'right',
+            marginTop: '10px',
+            textTransform: 'lowercase',
+            fontSize: '1.9em',           
+          },
+          lineHeight: "1.6em",
+        },
+        "@media (min-width: 1023px) and (max-width: 1260px)": {
+          "h1": {
+            span: {
+              fontSize: '3.5em',
+            },
+            fontSize: '1.4em',
+          },
+        },
+        "@media (max-width: 1023px)": {
           "h1": {
             "span": {
               fontSize: '2.2em',
@@ -265,6 +293,11 @@ export default {
           },
         },
       },
+      ".headerLogo": {
+        "@media (min-width: 1023px)": {
+          pr: '120px',
+        },
+      },
       "#aboutSection": {
         p: {
           ":last-child": {
@@ -289,6 +322,7 @@ export default {
       },
       h2: {
         textAlign: ['center', 'center', 'center', 'center'],
+        color: 'secondary'
       },
 
       ".referencesContainer, .blogContainer": {
@@ -316,6 +350,7 @@ export default {
       ".home-services": {
         "h3": {
           fontSize: '1em',
+          color: 'white'
         },
         "img": {
           maxWidth: '325px',
@@ -367,11 +402,12 @@ export default {
           transform: 'rotate(-90deg)',
           mb: '0px',
           left: '-45px',
+          color: 'secondary',
           top: '59px',
         }, 
         "h3": {
           ml: '46px',
-          color: 'secondary',
+          color: 'white',
           lineHeight: '1.45em',
           mt: '-12px'
         },
