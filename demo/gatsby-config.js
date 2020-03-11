@@ -12,7 +12,7 @@ module.exports = {
         siteTitle: "Steven Parratt - Freelance Web Developer",
         siteDescription:
           "Freelance Web Developer based in Liverpool, England. I produce ultra-performant web apps.",
-        siteUrl: "https://gatsby-theme-personal-site.netlify.com",
+        siteUrl: "https://stevenparratt.co.uk",
         // Set your page's content's base paths
         blogBasePath: "/blog", // default: /blog
         portfolioBasePath: "/benefits", // default: /portfolio
