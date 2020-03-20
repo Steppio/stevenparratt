@@ -68,7 +68,7 @@ const Footer = () => {
   )
 }
 
-
+export default Footer
 
 const Link = ({ to, children, ...props }) => (
   <a

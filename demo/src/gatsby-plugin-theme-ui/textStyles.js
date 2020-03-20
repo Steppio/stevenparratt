@@ -27,7 +27,7 @@ const textStyles = {
   fontAwesome: {
     fontFamily: '"Font Awesome 5 Free"',
     fontWeight: 900,
-  },  
+  }
 }
 
 export default textStyles

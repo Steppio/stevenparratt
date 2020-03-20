@@ -5,7 +5,7 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
-// import Navsocial from './navsocial'
+import Navsocial from './navsocial'
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
@@ -32,8 +32,8 @@ const Navigation = () => {
           <span></span>
           <span></span>
 
-
         <ul id="menu">
+          <Navsocial />
           {data.allSitePage.nodes.map(page => (
             <AniLink paintDrip bg="#59E19F" hex="#59E19F" duration={0.75} to={page.path} key={page.id}>
               {page.context.heading}

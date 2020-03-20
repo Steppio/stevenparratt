@@ -55,6 +55,11 @@ export default {
             transition: 'color 0.3s ease',
           },
           '#menu': {
+            "div > div": {
+              position: 'absolute',
+              right: '0',
+              top: '60px'
+            },
             li: {
               padding: '10px 0',
               fontSize: '22px',            
@@ -66,11 +71,11 @@ export default {
               display: 'block', 
               borderBottom: 'initial',
               textAlign: 'center',
-              maxWidth: '400px',
+              maxWidth: '290px',
               margin: '0 auto',
               color: 'background'      
             },
-            "a:nth-of-type(3)": {
+            "> a:nth-of-type(3)": {
               display: 'none',
             },
             width: '100%',
@@ -308,6 +313,16 @@ export default {
             mb: ['0px !important']
           },
         },
+        ".about-left": {
+          a: {
+            color: 'primary'
+          }
+        },        
+      },
+      "p": {
+        "strong": {
+          color: 'primary'
+        },
       },
       ".home-services, .benefits-page": {
         h3: {
@@ -393,9 +408,9 @@ export default {
         h3: {
           mb: 0,
         },
-        a: {
-          borderBottom: '1px dashed rgba(255,255,255,0.5)',
-        },
+        // a: {
+        //   borderBottom: '1px dashed rgba(255,255,255,0.5)',
+        // },
         "a:nth-last-of-type(1)": {
            borderBottom: '1px dashed rgba(255,255,255,0)',
         },
