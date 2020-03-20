@@ -10,14 +10,14 @@ import "../layout.css"
 const Hero = ({ greeting, name, subtitle, image }) => {
   return (
     <S.Section className="heroBanner" sx={{ }} bg={BlobUrl}>
-      <S.ImageContainer>
+      <S.ImageContainer className="animated delay-1s fadeIn">
         <Image sx={{ my: 0, minHeight: '400px' }} image={image} alt={image.imageAltText} />
       </S.ImageContainer>
       <S.TextContainer className="headerLogo">
-        <Styled.h1 sx={{ variant: "textStyles.display", color: 'white' }}>
-          {greeting} <S.Name>{name}</S.Name>
+        <Styled.h1 className="animated delay-1s flipInX" sx={{ variant: "textStyles.display", color: 'white' }}>
+          {greeting} <S.Name className="animated delay-1-4s flipInX">{name}</S.Name>
         </Styled.h1>
-        <Styled.h2 sx={{ color: 'white', textAlign: 'center' }}>{subtitle}</Styled.h2>
+        <Styled.h2 className="animated delay-1-8s flipInX" sx={{ color: 'white', textAlign: 'center' }}>{subtitle}</Styled.h2>
       </S.TextContainer>
     </S.Section>
   )

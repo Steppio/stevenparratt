@@ -47,10 +47,10 @@ const Footer = () => {
           </Link>
         )}
       </div>
-      <Styled.p sx={{ fontSize: "1.15em !important", color: "background", m: "10px 0 0 0" }}>
+      <Styled.p sx={{ fontSize: "0.8em !important", color: "background", m: "10px 0 0 0" }}>
         ©{new Date().getFullYear()} |{" "}
         <a
-          href="https://renne.tech"
+          href="https://www.stevenparratt.co.uk/"
           rel="noopener noreferrer"
           target="_blank"
           sx={{ 
@@ -68,7 +68,7 @@ const Footer = () => {
   )
 }
 
-export default Footer
+
 
 const Link = ({ to, children, ...props }) => (
   <a

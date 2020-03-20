@@ -70,11 +70,14 @@ export default {
               margin: '0 auto',
               color: 'background'      
             },
+            "a:nth-of-type(3)": {
+              display: 'none',
+            },
             width: '100%',
             height: '100vh',
             position: 'absolute',
             m: '-67px 0 0 -50px',
-            pt: '125px',
+            pt: '60px',
             pl: '0.5em',
             backgroundColor: 'white',
             listStyleType: 'none',
@@ -93,11 +96,11 @@ export default {
               opacity: '1',
               transform: 'rotate(45deg) translate(-2px, -1px)',
             },
-            ":checked ~ span:nth-last-child(3)": {
+            ":checked ~ span:nth-of-type(2)": {
               opacity: '0',
               transform: 'rotate(0deg) scale(0.2, 0.2)',
             },
-            ":checked ~ span:nth-last-child(2)": {
+            ":checked ~ span:nth-of-type(3)": {
               transform: 'rotate(-45deg) translate(0, -1px)',
             },
             ":checked ~ ul": {
@@ -150,6 +153,7 @@ export default {
       margin: 0,
       position: 'fixed', 
       width: '100%',
+      zIndex: '1000',
 
       h1: {
         color: "white",

@@ -26,6 +26,7 @@ const Layout = ({ children, ...props }) => {
           styles={css`
             body {
               margin: 0;
+              background: #333;
             }
           `}
         />

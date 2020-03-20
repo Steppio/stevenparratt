@@ -5,6 +5,8 @@ import React from "react"
 import { Link, graphql, useStaticQuery } from "gatsby"
 import AniLink from "gatsby-plugin-transition-link/AniLink"
 
+// import Navsocial from './navsocial'
+
 const Navigation = () => {
   const data = useStaticQuery(graphql`
     query {
@@ -25,7 +27,6 @@ const Navigation = () => {
     <nav className="mobileNav" sx={{ variant: "Main.mobileNav" }}>
       <div id="menuToggle">
         <input type="checkbox" />
-
 
           <span></span>
           <span></span>

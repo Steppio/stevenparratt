@@ -7,7 +7,7 @@ import { Container } from "theme-ui"
 
 const HomeButtons = () => {
   return (
-  	<Container className="about-section constrain_content" sx={{ textAlign: "center" }}>
+  	<Container className="about-section constrain_content animated delay-2s fadeIn" sx={{ textAlign: "center" }}>
         <ButtonLink to="#aboutSection" sx={{ variant: "textStyles.navLink", ml: "0" }}>
           About me
         </ButtonLink>
