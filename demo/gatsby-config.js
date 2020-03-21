@@ -41,6 +41,7 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-react-svg",
@@ -61,6 +62,26 @@ module.exports = {
       options: {
         pathToConfigModule: `${__dirname}/src/utils/typography`,
       },
-    },    
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    }, 
+    `gatsby-transformer-sharp`, 
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-smoothscroll`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Steven Parratt - Freelance Web Developer`,
+        short_name: `StevenParratt.co.uk`,
+        start_url: `/`,
+        icon: `${__dirname}/src/images/SPlogo.png`,
+        display: `standalone`,
+      },
+    },       
   ],
 }
