@@ -9,10 +9,10 @@ import ButtonLink from "./button-link"
 const Service = ({ title, slug, illustration, excerpt }) => {
   return (
     <S.Article sx={{ my: 3, flexBasis: "100%", backgroundColor: "rgba(255, 255, 255, 0.024)", borderRadius: "2px" }}>
-      <div class="service-image" sx={{ flexGrow: "1", padding: "0 2em" }}>
+      <div sx={{ flexGrow: "1", padding: "0 2em" }}>
         <Image image={illustration} alt={title} sx={{ minHeight: ['initial', 'initial', '425px', '425px'] }} />
       </div>
-      <div class="service-content" sx={{ padding: "4em 0 0 2em" }}>
+      <div sx={{ padding: "4em 0 0 2em" }}>
         <Styled.h3 sx={{ color: 'primary' }}>{title}</Styled.h3>
         <Styled.p>{excerpt}</Styled.p>
         <ButtonLink to={slug} sx={{ mt: "auto", mr: "auto" }}>
