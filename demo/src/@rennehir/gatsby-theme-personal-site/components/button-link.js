@@ -23,8 +23,8 @@ S.Link = styled(Link)`
   padding: 1.05rem 3rem;
   border-radius: 2px;
   letter-spacing: 0.25em;
-  font-weight: 700;
-  margin: 25px 0 0 !important;
+  font-size: 0.8em;
+  font-weight: 100;
 
   color: ${({ theme }) => theme.colors["background"]};
   text-decoration: none;

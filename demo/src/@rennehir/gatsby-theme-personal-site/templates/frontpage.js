@@ -11,6 +11,7 @@ import References from "../components/sections/reference-section"
 import Services from "../components/sections/service-section"
 import Contact from "../components/contact/contact"
 import HomeButtons from "../components/sections/home-buttons"
+import HeroDown from "../components/sections/hero-down"
 
 const FrontpageTemplate = ({ data, pageContext }) => {
   const { hero, posts, portfolio, references, services } = data
@@ -21,10 +22,11 @@ const FrontpageTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Hero {...hero} />
-      <HomeButtons />
-      <div className="blogContainer">
+      <HeroDown />
+      <div id="aboutSection" className="blogContainer">
         <About />
       </div>
+      <HomeButtons />
       <Services services={services.nodes} />
       <div className="blogContainer">
         <Blog

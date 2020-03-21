@@ -8,13 +8,17 @@ import ButtonLink from "./button-link"
 
 const Service = ({ title, slug, illustration, excerpt }) => {
   return (
-    <S.Article sx={{ my: 3, flexBasis: ["100%", "100%", "33%", "33%"] }}>
-      <Styled.h3>{title}</Styled.h3>
-      <Image image={illustration} alt={title} sx={{ minHeight: ['initial', 'initial', '425px', '425px'] }} />
-      <Styled.p>{excerpt}</Styled.p>
-      <ButtonLink to={slug} sx={{ mt: "auto", mr: "auto" }}>
-        Read more
-      </ButtonLink>
+    <S.Article sx={{ my: 3, flexBasis: "100%", backgroundColor: "rgba(255, 255, 255, 0.024)", borderRadius: "2px" }}>
+      <div class="service-image" sx={{ flexGrow: "1", padding: "0 2em" }}>
+        <Image image={illustration} alt={title} sx={{ minHeight: ['initial', 'initial', '425px', '425px'] }} />
+      </div>
+      <div class="service-content" sx={{ padding: "4em 0 0 2em" }}>
+        <Styled.h3 sx={{ color: 'primary' }}>{title}</Styled.h3>
+        <Styled.p>{excerpt}</Styled.p>
+        <ButtonLink to={slug} sx={{ mt: "auto", mr: "auto" }}>
+          Read more
+        </ButtonLink>
+      </div>
     </S.Article>
   )
 }
@@ -37,7 +41,7 @@ const S = {}
 
 S.Article = styled.article`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 100%;

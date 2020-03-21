@@ -285,16 +285,21 @@ export default {
           p: '0'
         },        
       },
-      ".about-section": {
+      ".hero-down": {
         a: {
-          ':nth-child(1)': {
-            float: 'left',
+          i: {
+            fontSize: '2.5em',
           },
-          ':nth-child(2)': {
-            float: 'right',
-          },   
+          float: 'none',
+          borderLeft: "1px solid transparent",
+          borderRight: "1px solid transparent",
+          padding: '10px 3rem'
+        },
+        textAlign: 'center',
+      },
+      ".about-section": {
+        a: {  
           minWidth: '49%',
-          p: ['15px 10px', '15px 10px', '1.05rem 3rem', '1.05rem 3rem']
         },
         "@media (max-width: 36rem)": {
           a: {
@@ -304,8 +309,11 @@ export default {
       },
       ".headerLogo": {
         "@media (min-width: 1023px)": {
-          pr: '120px',
+          pr: '80px',
         },
+        "@media (min-width: 1200px)": {
+          pr: '120px',
+        },        
       },
       "#aboutSection": {
         p: {
@@ -327,7 +335,6 @@ export default {
       ".home-services, .benefits-page": {
         h3: {
           // "@media (max-width: 36rem)": {
-            textAlign: 'center',
           // },
           m: ['20px 0 30px'],
           color: 'secondary'
@@ -369,7 +376,7 @@ export default {
       ".home-services": {
         "h3": {
           fontSize: '1em',
-          color: 'white'
+          mt: '0px'
         },
         "img": {
           maxWidth: '325px',
@@ -377,8 +384,7 @@ export default {
         },
         "p": {
           m: '0 auto',
-          textAlign: 'center',
-          p: '20px 25px',
+          p: '20px 25px 2em 0',
           maxWidth: '400px'
         },
         "a": {

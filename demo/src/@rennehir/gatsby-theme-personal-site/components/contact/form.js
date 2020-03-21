@@ -40,14 +40,10 @@ class ContactForm extends React.Component {
 		        </label>
 
 				<p>
-					<span class="wpcf7-form-control-wrap agree-30">
-						<span class="wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required">
-							<span class="wpcf7-list-item first last">
-								<input type="checkbox" name="earlyAccess" />
-								<span class="wpcf7-list-item-label">I'm happy to be contacted</span>
-							</span>
-						</span>
-					</span>
+					<label class="container">I'm happy to be contacted
+						<input type="checkbox" />
+						<span class="checkmark"></span>
+					</label>
 				</p>
 
 		        <button className='buttonStyles'>
@@ -138,7 +134,8 @@ S.Button = styled(Link)`
   padding: 1.05rem 3rem;
   border-radius: 2px;
   letter-spacing: 0.25em;
-  font-weight: 700;
+  font-size: 0.8em;
+  font-weight: 100;
   margin: 25px 0 0 !important;
 
   color: ${({ theme }) => theme.colors["background"]};

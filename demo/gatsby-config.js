@@ -11,7 +11,7 @@ module.exports = {
       options: {
         siteTitle: "Steven Parratt - Freelance Web Developer",
         siteDescription:
-          "Freelance Web Developer based in Liverpool, England. I produce ultra-performant web apps.",
+          "Freelance Web Developer based in Liverpool, England. I create super-fast webapps.",
         siteUrl: "https://stevenparratt.co.uk",
         // Set your page's content's base paths
         blogBasePath: "/blog", // default: /blog

@@ -10,7 +10,7 @@ const contactForm = {
 		  width: '100%',
 		  mb: 2,
 		  p: 1,
-		  textTransform: 'capitalize'
+		  textTransform: 'initial'
 		},
 		'textarea': {
 			height: '150px'
