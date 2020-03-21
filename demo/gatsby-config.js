@@ -41,7 +41,7 @@ module.exports = {
         ],
       },
     },
-    `gatsby-plugin-netlify-cache`,
+    // `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-react-svg",
