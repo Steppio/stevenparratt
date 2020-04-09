@@ -94,6 +94,11 @@ export default class Form extends React.Component {
 			MMERGE5: earlyAccess,
 		}		
 
+		const hideMe = document.getElementsByClassName('contact_form');
+
+		hideMe[0].children[0].style.display = "none";
+		hideMe[0].children[1].style.display = "none";
+
 		const mc = addToMailchimp(email, listFields).then(data => {
 	      var response = data;
 	      console.log(data)

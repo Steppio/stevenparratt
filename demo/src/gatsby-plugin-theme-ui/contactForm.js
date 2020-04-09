@@ -15,12 +15,12 @@ const contactForm = {
 		'textarea': {
 			height: '150px'
 		},
-		maxWidth: '600px',
+		maxWidth: '728px',
 		margin: '0 auto',
 		pb: 5
 	},
 	".constrain_content": {
-		maxWidth: '600px',
+		maxWidth: '728px',
 		m: '0 auto'
 	}
 }

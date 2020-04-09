@@ -11,7 +11,6 @@ const benefitsPage = {
 	},
 	"p, a": {
 		maxWidth: '400px',
-		margin: '20px auto 40px !important'
 	},
 }
 

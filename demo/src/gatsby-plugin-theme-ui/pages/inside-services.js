@@ -1,5 +1,8 @@
 const insideService = {
-	maxWidth: '600px',
+	"a": {
+		color: 'white'
+	},
+	maxWidth: '728px',
     margin: '100px auto'
 }
 

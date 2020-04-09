@@ -323,7 +323,7 @@ export default {
         },
         ".about-left": {
           a: {
-            color: 'primary'
+            color: 'white'
           }
         },        
       },
@@ -342,9 +342,6 @@ export default {
         p: {
           mb: ['5px'],
         },
-        a: {
-          m: ['20px 0 30px !important']
-        }
       },
       h2: {
         textAlign: ['center', 'center', 'center', 'center'],
@@ -367,7 +364,7 @@ export default {
           },
         },
         "article": {
-          maxWidth: '600px',
+          maxWidth: '610px',
           margin: '0 auto'
         },
       },
@@ -389,7 +386,6 @@ export default {
         },
         "a": {
           maxWidth: '300px',
-          m: '20px auto 30px !important'
         },
       },
 

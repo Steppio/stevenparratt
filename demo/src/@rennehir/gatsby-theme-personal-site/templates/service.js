@@ -28,7 +28,7 @@ const ServiceTemplate = ({ pathContext: { basePaths }, data: { service } }) => {
         <Link to={basePaths.servicesBasePath} sx={{ mt: 4 }}>
           Back all services
         </Link>   
-        <div className="contactContainer">
+        <div id="contactSection" className="contactContainer">
           <Contact />
         </div>       
       </div>
