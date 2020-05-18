@@ -3,54 +3,54 @@ import validator from 'email-validator'
 import addToMailchimp from 'gatsby-plugin-mailchimp'
 import Link from "gatsby-link"
 import styled from "@emotion/styled"
+import { ContactFormContainer } from '../componentStyle'
+import tw from 'tailwind.macro';
+
+import ButtonLink from "../button-link"
 
 class ContactForm extends React.Component {
   render() {
     const showEmailError = this.emailNode && !this.props.emailIsValid
     return (
-    	<div class="contactForm">
+    	<ContactFormContainer>
 			<form
 				onChange={this.props.onChange}
 				onSubmit={this.props.onSubmit}
-				className='flex justify-around items-center'
+				className='shadow-md px-8 pt-6 pb-8 mb-0'
+				id="myForm"
 			>
 
-		        <label className='mr3'>
-		            <input type='text' name='name' placeholder='name' className='name'
-		              ref={node => (this.nameNode = node)}
-		            />
-		        </label>
-
-		        <label className='mr3'>
-		            <input type='text' name='email' placeholder='email' className={`${showEmailError ? 'pv2 ba b--light-red' : ''}`}
-		              ref={node => (this.emailNode = node)}
-		            />
-		        </label>
-
-		        <label className='mr3'>
-		            <input type='text' name='company' placeholder='company' className='uni'
-		              ref={node => (this.uniNode = node)}
-		            />
-		        </label>
-
-		        <label className='mr3'>
-		            <textarea type='text' name='message' placeholder='message' className={`${showEmailError ? 'pv2 ba b--light-red' : ''}`}
+				<div class="mb-4">
+					<label class="text-left color-white text-gray-200 block text-sm font-bold mb-2" for="name">Name *</label>
+					<input required name='name' ref={node => (this.nameNode = node)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Name" />
+				</div>
+				<div class="mb-4">
+					<label class="block text-left color-white text-gray-200 text-sm font-bold mb-2" for="email">Email *</label>
+					<input ref={node => (this.emailNode = node)} className={`${showEmailError ? 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pv2 ba b--light-red' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="email" type="email" placeholder="Email" />
+				</div>
+				<div class="mb-4">
+					<label class="block text-left color-white text-gray-200 text-sm font-bold mb-2" for="Company">Company</label>
+					<input name='company' ref={node => (this.uniNode = node)} className={`${showEmailError ? 'pv2 ba b--light-red shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="company" type="company" placeholder="Company" />
+				</div>	
+				<div class="mb-4">
+					<label class="block text-left color-white text-gray-200 text-sm font-bold mb-2" for="Company">Message *</label>
+					<textarea required name='message' placeholder='message' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 		              ref={node => (this.messageNode = node)}
 		            ></textarea>
-		        </label>
-
+				</div>
 				<p>
 					<label class="container">I'm happy to be contacted
 						<input type="checkbox" />
 						<span class="checkmark"></span>
 					</label>
 				</p>
+								
+				<div class="flex items-center justify-between">
+			        <S.Button>Submit</S.Button>
+				</div>
 
-		        <button className='buttonStyles'>
-		        	Message me
-		        </button>
 	      	</form>
-      </div>
+      </ContactFormContainer>
     )
   }
 }
@@ -68,6 +68,8 @@ export default class Form extends React.Component {
 	}
 
 	validateEmail = () => {
+		console.log(this.state.email);
+
 		this.setState({emailIsValid: validator.validate(this.state.email)})
 	}
 
@@ -96,17 +98,33 @@ export default class Form extends React.Component {
 
 		const hideMe = document.getElementsByClassName('contact_form');
 
-		hideMe[0].children[0].style.display = "none";
+		hideMe[0].children[0].style.display = "block";
 		hideMe[0].children[1].style.display = "none";
 
 		const mc = addToMailchimp(email, listFields).then(data => {
 	      var response = data;
-	      console.log(data)
+	      if( response.result === 'error' ) {
+	      	this.setState({submitted: false})
+	      	// this.showErrors(response);
+	      }
+	      else {
+	      	this.setState({submitted: true})
+	      }
 	    })
 	    .catch(() => {})
 
-		this.setState({submitted: true})
 	}
+
+	// showErrors(e) {
+	// 	const hideMe = document.getElementsByClassName('contact_form');
+
+	// 	const myForm = document.getElementById("myForm"); 
+	// 	var errorDiv = document.createElement("div");
+	// 	var errorContent = document.createTextNode('tits');
+	// 	errorDiv.appendChild(errorContent);  
+	// 	console.log(errorDiv);
+	// 	hideMe[0].insertBefore(errorDiv, hideMe[0]); 
+	// }
 
   	render() {
     	const { emailIsValid, submitted } = this.state
@@ -131,45 +149,15 @@ export default class Form extends React.Component {
 
 const S = {}
 
-S.Button = styled(Link)`
-  --bg-color: ${({ theme }) => theme.colors["white"]};
-  display: inline-block;
-  box-sizing: border-box;
-  background-color: ${({ theme }) => theme.colors["background"]};
-  padding: 1.05rem 3rem;
-  border-radius: 2px;
-  letter-spacing: 0.25em;
-  font-size: 0.8em;
-  font-weight: 100;
-  margin: 25px 0 0 !important;
-
-  color: ${({ theme }) => theme.colors["background"]};
-  text-decoration: none;
-  text-transform: uppercase;
-  text-align: center;
-  transition: all 200ms ease-in-out;
-  color: ${({ theme }) => theme.colors["secondary"]};
-  border: 2px solid ${({ theme }) => theme.colors["secondary"]};
-  border-top: 0px;
-  border-bottom: 0px;
-  background: rgba(255,255,255,0.025);
-
-  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-    font-size: 0.75em;
-    min-width: 185px;
-    padding: 15px 10px;
-    width: 100%;  
-
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    font-size: 0.75em;
-  }
-
-  :hover {
-    filter: brightness(1);
-    color: ${({ theme }) => theme.colors["white"]};
-    border-left: 2px solid ${({ theme }) => theme.colors["white"]};
-    border-right: 2px solid ${({ theme }) => theme.colors["white"]};
-    background: ${({ theme }) => theme.colors["secondary"]};
-  }
+S.Button = styled.button`
+	${tw`
+		block mx-4 mt-4 mx-auto md:inline-block w-full md:max-w-md text-white py-3 px-3 border-b-4 rounded text-center
+	`}
+	@media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+		max-width: 250px;
+		min-width: 200px;
+	}
+	width: -webkit-fill-available;
+	background-color: #59E19F;
+	border-color: #3e9a6d;  	
 `

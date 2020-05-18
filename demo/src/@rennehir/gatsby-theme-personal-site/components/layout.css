@@ -1,4 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700&display=swap');
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'); */
 
 @-webkit-keyframes flipInX {
   from {
@@ -86,6 +94,7 @@
   }
 }
 
+
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
@@ -106,8 +115,8 @@
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+  /*-webkit-animation-fill-mode: both;*/
+  /*animation-fill-mode: both;*/
 }
 
 .animated.infinite {
@@ -221,4 +230,31 @@
   border: 1px solid #59E19F;
   border-radius: 3px;
   padding: 10px 0;
+}
+
+.svgcontainer svg {
+  vertical-align: bottom;
+}
+
+.referencesContainer > section {
+  background: #59E19F;
+}
+
+.referencesContainer .slick-dots {
+  position: initial;
+}
+
+.headerLogo > h1 > span {
+  color: #59E19F;
+  text-shadow: 4px 4px 0px #539a78, 7px 7px 0px #51643c;
+  letter-spacing: 5px;
+  display: block;
+  /*font-family: 'Fredoka One';*/
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Varela Round';
+}
+
+.slick-dots {
+  padding-bottom: 0px !important;
 }

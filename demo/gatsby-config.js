@@ -27,19 +27,16 @@ module.exports = {
       },
     },    
     {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          {
-            family: `Nunito Sans`,
-            variants: [`400`, `700`]
-          },
-          {
-            family: `Nunito Sans`,
-            subsets: [`latin`]
-          },
+          `Varela Round`,
+          `Dancing Script`,
+          `Fredoka One`,
+          `Nunito Sans\:400,700`
         ],
-      },
+        display: 'swap'
+      }
     },
     `gatsby-plugin-netlify-cache`,
     `gatsby-plugin-transition-link`,
@@ -72,6 +69,7 @@ module.exports = {
     }, 
     `gatsby-transformer-sharp`, 
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-smoothscroll`,
     {
       resolve: `gatsby-plugin-manifest`,

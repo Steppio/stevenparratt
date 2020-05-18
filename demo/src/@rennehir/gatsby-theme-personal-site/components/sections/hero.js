@@ -5,21 +5,47 @@ import styled from "@emotion/styled"
 import ButtonLink from "../button-link"
 import Image from "../image"
 import BlobUrl from "../../assets/blobs/blob-1.svg"
+import HeroDown from "../../components/sections/hero-down"
+import tw from 'tailwind.macro';
+import { Doughnut, Diamond, Cross } from '../shapes'
+import {
+  Section,
+  TextContainer,
+  Myname,
+  Andim,
+  Name,
+  ImageContainer
+} from './hero-styles.js'
+import { rotateDown, diamondTurn, down, up, heroText } from "../animation"
+
 import "../layout.css"
 
 const Hero = ({ greeting, name, subtitle, image }) => {
   return (
-    <S.Section className="heroBanner" sx={{ }} bg={BlobUrl}>
-      <S.ImageContainer className="animated delay-1s fadeIn">
-        <Image sx={{ my: 0, minHeight: '400px' }} image={image} alt={image.imageAltText} />
-      </S.ImageContainer>
-      <S.TextContainer className="headerLogo">
-        <Styled.h1 className="animated delay-1s flipInX" sx={{ variant: "textStyles.display", color: 'white' }}>
-          {greeting} <S.Name className="animated delay-1-4s flipInX">{name}</S.Name>
+    <Section className="heroBanner" sx={{ margin: '0 auto' }}>
+      <div className="shapes">
+        <Doughnut sx={{ animation: `${down} 10s ease-in-out infinite alternate` }}></Doughnut>
+        <Cross sx={{ animation: `${rotateDown} 10s ease-in-out infinite alternate` }}></Cross>
+        <Diamond sx={{ animation: `${diamondTurn} 10s ease-in-out infinite alternate` }}></Diamond>
+      </div>
+      <TextContainer className="headerLogo">
+        <Styled.h1 sx={{ variant: "textStyledisplay", color: 'white' }}>
+          <Myname className="hiMyNameIs">{greeting}</Myname> 
+          <Name>
+            <span className="hero-s" sx={{ animation: `${heroText} 5000ms ease-in-out infinite alternate` }}>S</span>
+            <span className="hero-t" sx={{ animation: `${heroText} 5100ms ease-in-out infinite alternate` }}>t</span>
+            <span className="hero-e" sx={{ animation: `${heroText} 5200ms ease-in-out infinite alternate` }}>e</span>
+            <span className="hero-v" sx={{ animation: `${heroText} 5300ms ease-in-out infinite alternate` }}>v</span>
+            <span className="hero-e2" sx={{ animation: `${heroText} 5400ms ease-in-out infinite alternate` }}>e</span>
+            <span className="hero-n" sx={{ animation: `${heroText} 5500ms ease-in-out infinite alternate` }}>n</span>
+          </Name>
         </Styled.h1>
-        <Styled.h2 className="animated delay-1-8s flipInX" sx={{ color: 'white', textAlign: 'center' }}>{subtitle}</Styled.h2>
-      </S.TextContainer>
-    </S.Section>
+        <Andim sx={{ color: 'white' }}>And I'm a <span className="block" sx={{ height: '6px' }}>&nbsp;</span>Web Developer</Andim>
+      </TextContainer>
+      <ImageContainer>
+        <HeroDown />
+      </ImageContainer>      
+    </Section>
   )
 }
 
@@ -36,43 +62,4 @@ export const fragment = graphql`
     }
     imageAltText
   }
-`
-
-const S = {}
-
-S.Section = styled.section`
-  display: grid;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-    "text"
-    "image";
-  grid-gap: ${props => props.theme.space[1]}px;
-  
-  background-repeat: no-repeat;
-  background-position: 0% 33%;
-  background-size: 50%;
-  padding: 120px 0 0 0;
-  margin-bottom: 0px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
-    background-size: 100%;
-  }
-  @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "text image";
-    background-position: 0% 0%;
-  }
-`
-
-S.TextContainer = styled.div`
-  grid-area: text;
-  align-self: center;
-`
-
-S.Name = styled.span`
-  border-bottom: 4px solid ${({ theme }) => theme.colors.secondary};
-`
-
-S.ImageContainer = styled.div`
-  grid-area: image;
 `

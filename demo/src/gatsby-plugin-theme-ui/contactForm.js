@@ -17,7 +17,6 @@ const contactForm = {
 		},
 		maxWidth: '728px',
 		margin: '0 auto',
-		pb: 5
 	},
 	".constrain_content": {
 		maxWidth: '728px',

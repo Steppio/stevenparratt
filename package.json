@@ -5,6 +5,10 @@
     "demo"
   ],
   "dependencies": {
-    "gatsby-plugin-netlify-cache": "^1.2.0"
+    "gatsby-plugin-netlify-cache": "^1.2.0",
+    "gatsby-plugin-postcss": "^2.2.1"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.2.0"
   }
 }

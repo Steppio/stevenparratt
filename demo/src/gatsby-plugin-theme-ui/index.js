@@ -11,7 +11,7 @@ import insideService from './pages/inside-services'
  * @see https://theme-ui.com/gatsby-plugin/
  */
 export default {
-  breakpoints: ["36rem", "52rem", "64rem"],
+  breakpoints: ["640px", "767px", "1024px", "1280px"],
   colors: {
     text: "#fff",
     heading: "#59E19F",
@@ -99,6 +99,7 @@ export default {
           input: {
             ":checked ~ span": {
               opacity: '1',
+              backgroundColor: 'secondary',
               transform: 'rotate(45deg) translate(-2px, -1px)',
             },
             ":checked ~ span:nth-of-type(2)": {
@@ -134,7 +135,7 @@ export default {
             height: '4px',
             mb: '5px',
             position: 'relative',
-            backgroundColor: 'secondary',
+            backgroundColor: 'white',
             borderRadius: '3px',
             zIndex: '1',
             transformOrigin: '4px 0px',
@@ -210,126 +211,52 @@ export default {
       },
     },
     Main: {
+      "#aboutSection, #contactSection, #serviceSection, .blogContainer, .referencesContainer": {
+        py: ['5em', '', '', '', '']
+      },
+      ".service-header": {
+        color: 'background'
+      },
+      ".about-header": {
+        color: 'primary'
+      },
+      ".green-bg": {
+        background: '#59E19F'
+      },
+      h3: {
+        fontSize: ['1.25em', '', '', '', ''],
+      },      
       ".heroBanner": {        
         h1: {
           span: {
-            fontSize: ['1.35em', '1.75em', '3.5em', '3.5em'],
             color: 'secondary',
-            textAlign: 'center',
-            ml: ['10px', '10px', '0', '0'],
             fontStyle: 'normal',
-            borderBottom: '4px solid white',
           },
-          mb: ['25px', '25px', '2em', '2em'],
-          textAlign: 'center',
           color: 'white'
         },  
         h2: {
           color: "white",
-          textAlign: ['center'],
-          mt: ['22px', '22px', '25px', '25px'],
-          mb: ['10px', '10px', '1.666rem', '1.666rem'],
-        },
-        "@media (min-width: 64rem)": {
-          "h1": {
-            "span": {
-              borderBottom: '0px !important',
-              fontSize: '3.51em',
-              marginRight: '-10px',
-              lineHeight: '0.65em',
-            },
-            textAlign: 'right',
-            mb: 0,
-
-          },
-          "h2": {
-            textAlign: 'right',
-            marginTop: '10px',
-            textTransform: 'lowercase',
-            fontSize: '1.9em',           
-          },
-          lineHeight: "1.6em",
-        },
-        "@media (min-width: 1023px) and (max-width: 1260px)": {
-          "h1": {
-            span: {
-              fontSize: '3.5em',
-            },
-            fontSize: '1.4em',
-          },
-        },
-        "@media (max-width: 1023px)": {
-          "h1": {
-            "span": {
-              fontSize: '2.2em',
-              textAlign: 'center',
-              marginLeft: '0px',
-              display: 'block',
-              borderBottom: '0px'              
-            },
-            fontSize: "1em",
-            textAlign: "right",
-            m: '20px 0 0', 
-            float: 'right'
-          },
-          "h2": {
-            textAlign: 'right',
-            marginTop: '0px',
-            marginBottom: '10px',
-            fontSize: '0.62em',
-            clear: 'both'
-          },
-          "img": {
-            padding: '40px 0 20px'
-          },
-          p: '0'
-        },        
-      },
-      ".hero-down": {
-        a: {
-          i: {
-            fontSize: '2.5em',
-          },
-          float: 'none',
-          borderLeft: "1px solid transparent",
-          borderRight: "1px solid transparent",
-          padding: '10px 3rem'
-        },
-        textAlign: 'center',
-      },
-      ".about-section": {
-        a: {  
-          minWidth: '49%',
-        },
-        "@media (max-width: 36rem)": {
-          a: {
-            minWidth: '100%',
-          },
-        },
-      },
-      ".headerLogo": {
-        "@media (min-width: 1023px)": {
-          pr: '80px',
-        },
-        "@media (min-width: 1200px)": {
-          pr: '120px',
-        },        
+        }, 
+        
       },
       "#aboutSection": {
-        p: {
-          ":last-child": {
-            mb: ['0px !important']
-          },
-        },
         ".about-left": {
           a: {
-            color: 'white'
+            color: '#000',
+            fontWeight: '700',
+            textDecoration: 'none',
+            fontStyle: 'oblique'
           }
-        },        
+        },      
+      },
+      "#serviceSection": {
+        background: "#59E19F"
       },
       "p": {
         "strong": {
-          color: 'primary'
+          color: "#000",
+          color: "#333",
+          fontWeight: "600"
         },
       },
       ".home-services, .benefits-page": {
@@ -339,13 +266,9 @@ export default {
           m: ['20px 0 30px'],
           color: 'secondary'
         },
-        p: {
-          mb: ['5px'],
-        },
       },
       h2: {
-        textAlign: ['center', 'center', 'center', 'center'],
-        color: 'secondary'
+        textAlign: ['center', 'center', 'center', 'center']
       },
 
       ".referencesContainer, .blogContainer": {
@@ -356,36 +279,21 @@ export default {
       },
       ".referencesContainer": {
         ".slick-dots": {
+          py: ['30px', '30px', '30px', '30px'],
           "li button": {
             ":before": {
               fontSize: '25px',
-              color: 'secondary'
+              color: 'background'
             },            
           },
+        },
+        "h4": {
+          color: 'background',
+          fontWeight: '500'
         },
         "article": {
           maxWidth: '610px',
           margin: '0 auto'
-        },
-      },
-
-      // home services
-      ".home-services": {
-        "h3": {
-          fontSize: '1em',
-          mt: '0px'
-        },
-        "img": {
-          maxWidth: '325px',
-          margin: '0 auto'         
-        },
-        "p": {
-          m: '0 auto',
-          p: '20px 25px 2em 0',
-          maxWidth: '400px'
-        },
-        "a": {
-          maxWidth: '300px',
         },
       },
 
@@ -399,6 +307,10 @@ export default {
         ...insideService
       },
 
+      p: {
+        mb: "15px"
+      },
+
       //blog
       ".blogContainer": {
         "> section > a": {
@@ -410,31 +322,11 @@ export default {
         h3: {
           mb: 0,
         },
-        // a: {
-        //   borderBottom: '1px dashed rgba(255,255,255,0.5)',
-        // },
-        "a:nth-last-of-type(1)": {
-           borderBottom: '1px dashed rgba(255,255,255,0)',
-        },
       },
       ".blogListing": {
         "p": {
-          position: 'absolute',
-          transform: 'rotate(-90deg)',
-          mb: '0px',
-          left: '-45px',
           color: 'secondary',
-          top: '59px',
         }, 
-        "h3": {
-          ml: '46px',
-          color: 'white',
-          lineHeight: '1.45em',
-          mt: '-12px'
-        },
-        "> div": {
-          minHeight: '155px'
-        },
       },
 
       // inside pages
@@ -465,15 +357,14 @@ export default {
         ...buttonStyle,
       },
       margin: "0 auto",
-      maxWidth: "container",
-      width: "90vw",
+      width: "100%"
     },
     Container: {
       img: {
         width: "100%",
       },
       padding: 0,
-      maxWidth: "container",
+      maxWidth: "100%"
     },
     a: {
       variant: "textStyles.body",
@@ -486,6 +377,7 @@ export default {
       position: "relative",
       padding: 0,
       margin: 0,
+      color: 'background',
       textAlign: 'center',
       marginBottom: 3,
       boxSizing: "border-box",

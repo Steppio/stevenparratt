@@ -18,9 +18,13 @@ const BlogLink = ({ title, slug, date, cover }) => {
     >
       <S.Container className="blogListing">
         <S.Overlay zoomed={zoomed} />
-        <S.Content sx={{  px: 2, py: 2, pl: '0', position: 'relative' }}>
+        <S.Content sx={{  px: 2, py: 2, pt: 0, pl: '0', width: '100%', position: 'relative' }}>
           <Styled.h3>{title}</Styled.h3>
           <p>{ date }</p>
+
+          <div class="blog-read">
+            <i class="fas fa-eye"></i>
+          </div>
         </S.Content>
       </S.Container>
     </S.Link>
@@ -75,6 +79,13 @@ S.Container = styled.div`
 `
 
 S.Content = styled.div`
+  .blog-read {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5em;
+    color: ${({ theme }) => theme.colors['secondary']}
+  }
   color: white;
   position: relative;
 `

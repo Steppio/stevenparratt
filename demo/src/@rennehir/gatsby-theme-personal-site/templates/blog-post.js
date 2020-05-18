@@ -1,12 +1,14 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { graphql, Link } from "gatsby"
+import tw from 'tailwind.macro'
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "@emotion/styled"
 import SEO from "../components/seo"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
+import { StyledHeader4, InsideHeader, BlogInside } from "../components/componentStyle"
 
 const BlogPostTemplate = ({
   pathContext: { previous, next },
@@ -17,7 +19,11 @@ const BlogPostTemplate = ({
   return (
     <Layout sx={{ mb: 4 }}>
       <SEO postMeta={{ title: title, description: excerpt, slug }} isBlogPost />
-      <article sx={{ mb: 4 }}>
+      <InsideHeader>
+        <StyledHeader4>{title}</StyledHeader4>        
+        <Styled.p sx={{ color: "white", textAlign: 'center' }}>Published on {date}</Styled.p>
+      </InsideHeader>
+      <BlogInside sx={{ mb: 4 }}>
         {cover && (
           <Image
             image={cover}
@@ -30,10 +36,8 @@ const BlogPostTemplate = ({
             }}
           />
         )}
-        <Styled.p sx={{ color: "muted" }}>Published on {date}</Styled.p>
-        <Styled.h1>{title}</Styled.h1>
         <MDXRenderer>{body}</MDXRenderer>
-      </article>
+      </BlogInside>
       <S.LinkContainer sx={{ fontSize: 3 }}>
         {previous && (
           <S.LinkContent sx={{ gridArea: "newer" }}>
@@ -73,6 +77,13 @@ export const query = graphql`
 const S = {}
 
 S.LinkContainer = styled.div`
+  ${tw`
+    mx-6 lg:mx-auto
+  `}
+  p {
+    color: ${({ theme }) => theme.colors['secondary']}
+  }
+  max-width: 800px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "older newer";

@@ -13,6 +13,7 @@ import theme from "gatsby-plugin-theme-ui"
 import SEO from "../components/seo"
 import Navigation from "./navigation"
 import MobileNavigation from "./mobile-navigation"
+import InsidePageNav from './inside-page-nav' 
 import Footer from "./footer.js"
 
 import "@fortawesome/fontawesome-free/css/all.css"
@@ -37,6 +38,7 @@ const Layout = ({ children, ...props }) => {
           }}>  
             <Navigation />
             <MobileNavigation />
+            <InsidePageNav />
           </Container>
         </Header>
         <Main>

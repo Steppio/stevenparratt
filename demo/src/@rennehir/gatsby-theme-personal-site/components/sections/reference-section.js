@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css"
 
 import Section from "../section"
 import Reference from "../reference-link"
+import { StyledHeader2 } from '../componentStyle'
 
 const ReferenceSection = ({ title, references, basePath }) => {
   const settings = {
@@ -21,9 +22,9 @@ const ReferenceSection = ({ title, references, basePath }) => {
   }
 
   return (
-    <Section sx={{ float: 'none' }}>
-      {title && <Styled.h2 sx={{ textAlign: "center" }}>{title}</Styled.h2>}
-      <Slider {...settings} sx={{ my: 3 }}>
+    <Section sx={{ float: 'none' }} className="green-bg">
+      <StyledHeader2 className="service-header">References</StyledHeader2>
+      <Slider {...settings}>
         {references.map(ref => (
           <Reference key={ref.id} {...ref} />
         ))}

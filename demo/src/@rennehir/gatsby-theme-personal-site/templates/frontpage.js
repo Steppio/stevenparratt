@@ -11,7 +11,9 @@ import References from "../components/sections/reference-section"
 import Services from "../components/sections/service-section"
 import Contact from "../components/contact/contact"
 import HomeButtons from "../components/sections/home-buttons"
-import HeroDown from "../components/sections/hero-down"
+
+import SVGtop from "../components/SVGtop"
+import SVGbottom from "../components/SVGbottom"
 
 const FrontpageTemplate = ({ data, pageContext }) => {
   const { hero, posts, portfolio, references, services } = data
@@ -22,27 +24,32 @@ const FrontpageTemplate = ({ data, pageContext }) => {
   return (
     <Layout>
       <Hero {...hero} />
-      <HeroDown />
-      <div id="aboutSection" className="blogContainer">
+      
+      <SVGbottom /> 
+      <div id="serviceSection" className="blogContainer clearfix">
+        <Services services={services.nodes} />
+      </div>
+      <SVGtop />
+      <div id="aboutSection" className="blogContainer clearfix">
         <About />
       </div>
-      <HomeButtons />
-      <Services services={services.nodes} />
-      <div className="blogContainer">
+      <div className="blogContainer clearfix">
         <Blog
           title="Latest from the blog"
           posts={posts.nodes}
           basePath={blogBasePath}
         />
       </div>
-      <div className="referencesContainer">
-        <References
-          title="References"
-          references={references.nodes}
-          basePath={referencesBasePath}
-        />
-      </div>
-      <div id="contactSection" className="contactContainer">
+      <SVGbottom />
+        <div className="referencesContainer clearfix" sx={{ background: "#59E19F" }}>
+          <References
+            title="References"
+            references={references.nodes}
+            basePath={referencesBasePath}
+          />
+        </div>
+      <SVGtop />
+      <div id="contactSection" className="contactContainer clearfix">
         <Contact />
       </div>
     </Layout>
