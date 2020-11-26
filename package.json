@@ -6,7 +6,8 @@
   ],
   "dependencies": {
     "gatsby-plugin-netlify-cache": "^1.2.0",
-    "gatsby-plugin-postcss": "^2.2.1"
+    "gatsby-plugin-postcss": "^2.2.1",
+    "gatsby-plugin-robots-txt": "^1.5.3"
   },
   "devDependencies": {
     "tailwindcss": "^1.2.0"

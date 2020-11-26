@@ -5,7 +5,11 @@
  */
 
 module.exports = {
+  siteMetadata: {
+    siteUrl: `https://www.stevenparratt.co.uk`,
+  },    
   plugins: [
+    `gatsby-plugin-sitemap`,
     {
       resolve: "@rennehir/gatsby-theme-personal-site",
       options: {
@@ -25,7 +29,15 @@ module.exports = {
       options: {
         trackingId: "UA-160066070-1",
       },
-    },    
+    }, 
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.stevenparratt.co.uk',
+        sitemap: 'https://www.stevenparratt.co.uk/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    },
     {
       resolve: `gatsby-plugin-webfonts`,
       options: {
