@@ -21,16 +21,16 @@ class ContactForm extends React.Component {
 			>
 
 				<div class="mb-4">
-					<label class="text-left color-white text-gray-200 block text-sm mb-2" for="name">Name *</label>
-					<input required name='name' ref={node => (this.nameNode = node)} className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Name" />
+					<label class="text-left color-white text-gray-200 block text-sm mb-2" for="Name">Name *</label>
+					<input required name='Name' ref={node => (this.nameNode = node)} className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Name" type="text" placeholder="Name" />
 				</div>
 				<div class="mb-4">
 					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="email">Email *</label>
-					<input ref={node => (this.emailNode = node)} className={`${showEmailError ? 'shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pv2 ba b--light-red' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="email" type="email" placeholder="Email" />
+					<input ref={node => (this.emailNode = node)} className={`${showEmailError ? 'shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pv2 ba b--light-red' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="email" name="email" type="email" placeholder="Email" />
 				</div>
 				<div class="mb-4">
-					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="Company">Message *</label>
-					<textarea required name='message' placeholder='message' className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="Message">Message *</label>
+					<textarea id="Message" required name='Message' placeholder='Message' className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 		              ref={node => (this.messageNode = node)}
 		            ></textarea>
 				</div>
@@ -40,6 +40,8 @@ class ContactForm extends React.Component {
 						<span class="checkmark"></span>
 					</label>
 				</p>
+
+				<div id="errorMessages"></div>
 								
 				<div class="flex items-center justify-between">
 			        <S.Button>Submit</S.Button>
@@ -56,7 +58,6 @@ export default class Form extends React.Component {
 	state = {
 		name: '',
 		email: '',
-		company: '',
 		message: '',
 		earlyAccess: false,
 		emailIsValid: false,
@@ -82,12 +83,11 @@ export default class Form extends React.Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault()
-		const { name, email, company, message, earlyAccess } = this.state
+		const { name, email, message, earlyAccess } = this.state
 
 		var listFields = {
 			MMERGE1: name,
 			MMERGE2: email,
-			MMERGE3: company,
 			MMERGE4: message,
 			MMERGE5: earlyAccess,
 		}		
@@ -101,7 +101,7 @@ export default class Form extends React.Component {
 	      var response = data;
 	      if( response.result === 'error' ) {
 	      	this.setState({submitted: false})
-	      	// this.showErrors(response);
+	      	this.showErrors(response);
 	      }
 	      else {
 	      	this.setState({submitted: true})
@@ -111,16 +111,14 @@ export default class Form extends React.Component {
 
 	}
 
-	// showErrors(e) {
-	// 	const hideMe = document.getElementsByClassName('contact_form');
-
-	// 	const myForm = document.getElementById("myForm"); 
-	// 	var errorDiv = document.createElement("div");
-	// 	var errorContent = document.createTextNode('tits');
-	// 	errorDiv.appendChild(errorContent);  
-	// 	console.log(errorDiv);
-	// 	hideMe[0].insertBefore(errorDiv, hideMe[0]); 
-	// }
+	showErrors(e) {
+		const myForm = document.getElementById("errorMessages"); 
+		var errorDiv = document.createElement("div");
+		var errorContent = document.createTextNode('There has been an error submitting your email address. You may already be subscribed to this list.');
+		errorDiv.appendChild(errorContent);  
+		console.log(errorDiv);
+		myForm.appendChild(errorContent);
+	}
 
   	render() {
     	const { emailIsValid, submitted } = this.state

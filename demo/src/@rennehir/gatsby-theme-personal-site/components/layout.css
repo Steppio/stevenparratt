@@ -4,10 +4,6 @@
 
 @tailwind utilities;
 
-/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap'); */
-
 @-webkit-keyframes flipInX {
   from {
     -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
@@ -499,4 +495,10 @@ blockquote {
 .back-to-services i {
   color: #adadad;
   font-size: 1.5em;
+}
+
+#errorMessages {
+  color: red;
+  max-width: 400px;
+  margin: 0 auto 20px;
 }

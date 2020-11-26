@@ -26,18 +26,18 @@ const Navigation = () => {
   return (
     <nav className="mobileNav" sx={{ variant: "Main.mobileNav" }}>
       <div id="menuToggle">
-        <input type="checkbox" />
+        <label sx={{ display: 'none'}} for="openmenu">Open Menu</label>
+        <input name="openmenu" type="checkbox" />
 
           <span></span>
           <span></span>
           <span></span>
 
         <ul id="menu">
-          <Navsocial />
           {data.allSitePage.nodes.map(page => (
-            <AniLink className={page.context.heading.toLowerCase() + '-nav'} bg="#59E19F" hex="#59E19F" duration={0.75} to={page.path} key={page.id}>
-              {page.context.heading}
-            </AniLink>
+              <AniLink className={page.context.heading.toLowerCase() + '-nav'} bg="#59E19F" hex="#59E19F" duration={0.75} to={page.path} key={page.id}>
+                {page.context.heading}
+              </AniLink>
           ))}
         </ul>
       </div>

@@ -27,12 +27,16 @@ module.exports = {
       },
     },    
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-webfonts`,
       options: {
-        fonts: [
-          `Inter\:100,300,400,900`,
-        ],
-        display: 'swap'
+        fonts: {
+          google: [
+            {
+              family: "Inter",
+              variants: ["100", "300", "400"],
+            }
+          ]
+        }
       }
     },
     `gatsby-plugin-netlify-cache`,
