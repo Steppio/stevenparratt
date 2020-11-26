@@ -4,18 +4,20 @@ import { graphql } from "gatsby"
 import styled from "@emotion/styled"
 import ButtonLink from "../button-link"
 import Image from "../image"
-import BlobUrl from "../../assets/blobs/blob-1.svg"
+import HeroImage from "../../assets/sp6.svg"
 import HeroDown from "../../components/sections/hero-down"
 import tw from 'tailwind.macro';
-import { Doughnut, Diamond, Cross } from '../shapes'
+import { Bubble } from '../shapes'
 import {
   Section,
   TextContainer,
   Myname,
   Andim,
   Name,
-  ImageContainer
+  ImageContainer,
+  stevenparrattsvg
 } from './hero-styles.js'
+import { StyledHeader2, StyledHeader3, StyledHeader4, StyledHeader5 } from '../componentStyle'
 import { rotateDown, diamondTurn, down, up, heroText } from "../animation"
 
 import "../layout.css"
@@ -24,27 +26,19 @@ const Hero = ({ greeting, name, subtitle, image }) => {
   return (
     <Section className="heroBanner" sx={{ margin: '0 auto' }}>
       <div className="shapes">
-        <Doughnut sx={{ animation: `${down} 10s ease-in-out infinite alternate` }}></Doughnut>
-        <Cross sx={{ animation: `${rotateDown} 10s ease-in-out infinite alternate` }}></Cross>
-        <Diamond sx={{ animation: `${diamondTurn} 10s ease-in-out infinite alternate` }}></Diamond>
+        <Bubble className="bubble1" sx={{ animation: `${down} 10s ease-in-out infinite alternate` }}></Bubble>
+        <Bubble className="bubble2" sx={{ animation: `${rotateDown} 10s ease-in-out infinite alternate` }}></Bubble>
+        <Bubble className="bubble3" sx={{ animation: `${diamondTurn} 10s ease-in-out infinite alternate` }}></Bubble>
       </div>
-      <TextContainer className="headerLogo">
-        <Styled.h1 sx={{ variant: "textStyledisplay", color: 'white' }}>
-          <Myname className="hiMyNameIs">{greeting}</Myname> 
-          <Name>
-            <span className="hero-s" sx={{ animation: `${heroText} 5000ms ease-in-out infinite alternate` }}>S</span>
-            <span className="hero-t" sx={{ animation: `${heroText} 5100ms ease-in-out infinite alternate` }}>t</span>
-            <span className="hero-e" sx={{ animation: `${heroText} 5200ms ease-in-out infinite alternate` }}>e</span>
-            <span className="hero-v" sx={{ animation: `${heroText} 5300ms ease-in-out infinite alternate` }}>v</span>
-            <span className="hero-e2" sx={{ animation: `${heroText} 5400ms ease-in-out infinite alternate` }}>e</span>
-            <span className="hero-n" sx={{ animation: `${heroText} 5500ms ease-in-out infinite alternate` }}>n</span>
-          </Name>
-        </Styled.h1>
-        <Andim sx={{ color: 'white' }}>And I'm a <span className="block" sx={{ height: '6px' }}>&nbsp;</span>Web Developer</Andim>
-      </TextContainer>
-      <ImageContainer>
+      <div className="image-content">
+        <Image image={image} alt={name} className="stevenparrattsvg" /> 
+        <TextContainer className="headerLogo">
+          <Andim sx={{ color: 'white' }}>Steven Parratt<span className="block" sx={{ height: '6px' }}>&nbsp;</span>Web Developer</Andim>
+        </TextContainer>
+      </div>
+      <ImageContainer className="clearfix">
         <HeroDown />
-      </ImageContainer>      
+      </ImageContainer>  
     </Section>
   )
 }

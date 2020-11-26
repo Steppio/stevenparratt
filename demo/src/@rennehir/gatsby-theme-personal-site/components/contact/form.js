@@ -16,25 +16,21 @@ class ContactForm extends React.Component {
 			<form
 				onChange={this.props.onChange}
 				onSubmit={this.props.onSubmit}
-				className='shadow-md px-8 pt-6 pb-8 mb-0'
+				className='shadow-md mb-0'
 				id="myForm"
 			>
 
 				<div class="mb-4">
-					<label class="text-left color-white text-gray-200 block text-sm font-bold mb-2" for="name">Name *</label>
-					<input required name='name' ref={node => (this.nameNode = node)} className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Name" />
+					<label class="text-left color-white text-gray-200 block text-sm mb-2" for="name">Name *</label>
+					<input required name='name' ref={node => (this.nameNode = node)} className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Name" />
 				</div>
 				<div class="mb-4">
-					<label class="block text-left color-white text-gray-200 text-sm font-bold mb-2" for="email">Email *</label>
-					<input ref={node => (this.emailNode = node)} className={`${showEmailError ? 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pv2 ba b--light-red' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="email" type="email" placeholder="Email" />
+					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="email">Email *</label>
+					<input ref={node => (this.emailNode = node)} className={`${showEmailError ? 'shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pv2 ba b--light-red' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="email" type="email" placeholder="Email" />
 				</div>
 				<div class="mb-4">
-					<label class="block text-left color-white text-gray-200 text-sm font-bold mb-2" for="Company">Company</label>
-					<input name='company' ref={node => (this.uniNode = node)} className={`${showEmailError ? 'pv2 ba b--light-red shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="company" type="company" placeholder="Company" />
-				</div>	
-				<div class="mb-4">
-					<label class="block text-left color-white text-gray-200 text-sm font-bold mb-2" for="Company">Message *</label>
-					<textarea required name='message' placeholder='message' className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="Company">Message *</label>
+					<textarea required name='message' placeholder='message' className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 		              ref={node => (this.messageNode = node)}
 		            ></textarea>
 				</div>
@@ -151,13 +147,11 @@ const S = {}
 
 S.Button = styled.button`
 	${tw`
-		block mx-4 mt-4 mx-auto md:inline-block w-full md:max-w-md text-white py-3 px-3 border-b-4 rounded text-center
+		block mx-4 mt-4 mx-auto md:inline-block w-full md:max-w-md text-white py-3 px-3 text-center uppercase
 	`}
-	@media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		max-width: 250px;
-		min-width: 200px;
-	}
 	width: -webkit-fill-available;
-	background-color: #59E19F;
-	border-color: #3e9a6d;  	
+	background-color: #fff;
+	color: black;
+	font-family: 'Inter','Helvetica Neue','Helvetica','Arial',sans-serif;
+	border-color: #7b7b7b;  	
 `

@@ -13,7 +13,7 @@ const BlogPostsTemplate = ({ data: { posts } }) => {
       <SEO postMeta={{ title: "Blog" }} />
       <InsideHeader>
         <StyledHeader1>Blog</StyledHeader1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eget erat enim. Nulla gravida auctor tortor, eget iaculis turpis tempus et. Aliquam in mollis nisi.</p>
+        <p sx={{ margin: '0 auto', padding: '0 1.5rem' }}>I like to write articles and tutorials for the various tech stacks that I work with. Below is a collection of my blog posts:</p>
       </InsideHeader>
       <div className="inside-list" sx={{ pb: 4 }}>
         <Blog posts={posts.nodes} />

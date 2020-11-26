@@ -33,15 +33,8 @@ const FrontpageTemplate = ({ data, pageContext }) => {
       <div id="aboutSection" className="blogContainer clearfix">
         <About />
       </div>
-      <div className="blogContainer clearfix">
-        <Blog
-          title="Latest from the blog"
-          posts={posts.nodes}
-          basePath={blogBasePath}
-        />
-      </div>
       <SVGbottom />
-        <div className="referencesContainer clearfix" sx={{ background: "#59E19F" }}>
+        <div className="referencesContainer clearfix" sx={{ background: "#fff" }}>
           <References
             title="References"
             references={references.nodes}
@@ -52,6 +45,14 @@ const FrontpageTemplate = ({ data, pageContext }) => {
       <div id="contactSection" className="contactContainer clearfix">
         <Contact />
       </div>
+      <SVGbottom /> 
+      <div className="blogContainer clearfix" sx={{ background: "#fff" }}>
+        <Blog
+          title="Latest from the blog"
+          posts={posts.nodes}
+          basePath={blogBasePath}
+        />
+      </div>      
     </Layout>
   )
 }

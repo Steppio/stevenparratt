@@ -18,13 +18,12 @@ const S = {}
 
 S.Link = styled(Link)`
   ${tw`
-        block mx-4 mt-4 md:inline-block w-full md:max-w-md text-white py-3 px-3 border-b-4 rounded text-center
+        block mx-4 mt-4 md:inline-block w-full md:max-w-md text-black py-3 px-3 border-b-2 text-center lg:m-0
   `}
-  @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-      max-width: 250px;
-      min-width: 200px;
-  }
+  font-family: 'Inter','Helvetica Neue','Helvetica','Arial',sans-serif;
+  letter-spacing: 0.11em;
+  font-size: 1.25em;
   width: -webkit-fill-available;
-  background-color: #59E19F;
-  border-color: #3e9a6d;
+  background-color: #fff;
+  border-color: #7b7b7b;
 `

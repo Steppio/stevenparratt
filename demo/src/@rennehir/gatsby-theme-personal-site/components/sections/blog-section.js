@@ -11,12 +11,12 @@ import Link from "../button-link"
 const BlogSection = ({ title, posts, basePath }) => {
   return (
     <Section>
-      <BlogContainer>
-        <StyledHeader2 className="about-header">Blog</StyledHeader2>
+      <BlogContainer className="blog-frontpage-container">
+        <StyledHeader2 className="about-header blog-frontpage-header" sx={{ color: "black" }}>Blog</StyledHeader2>
         {posts.map(post => (
           <BlogLink key={post.id} {...post} />
         ))}
-        {basePath && <Link to={basePath}>Read all</Link>}
+        {basePath && <Link className="black-button" to={basePath}>Read all</Link>}
       </BlogContainer>
     </Section>
   )

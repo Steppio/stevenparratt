@@ -8,6 +8,8 @@ export const BlogContainer = styled.div`
 	h3 {
 		max-width: 90%;
 	}
+	padding: 0 1.5rem;
+	margin: 0 auto !important;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;	

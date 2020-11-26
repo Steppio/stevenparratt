@@ -9,9 +9,9 @@ module.exports = {
     {
       resolve: "@rennehir/gatsby-theme-personal-site",
       options: {
-        siteTitle: "Steven Parratt - Freelance Web Developer",
+        siteTitle: "Steven Parratt - Freelance Web Developer - Liverpool, England",
         siteDescription:
-          "Freelance Web Developer based in Liverpool, England. I create super-fast webapps.",
+          "Freelance Web Developer based in Liverpool, England. I specialise in high performance website development and e-commerce solutions.",
         siteUrl: "https://stevenparratt.co.uk",
         // Set your page's content's base paths
         blogBasePath: "/blog", // default: /blog
@@ -30,10 +30,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [
-          `Varela Round`,
-          `Dancing Script`,
-          `Fredoka One`,
-          `Nunito Sans\:400,700`
+          `Inter\:100,300,400,900`,
         ],
         display: 'swap'
       }

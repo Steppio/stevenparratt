@@ -15,7 +15,7 @@ export default {
   colors: {
     text: "#fff",
     heading: "#59E19F",
-    background: "#333",
+    background: "#000",
     primary: "#59E19F",
     secondary: "#59E19F",
     muted: "#535159",
@@ -25,8 +25,8 @@ export default {
   textStyles,
   fonts: {
     body:
-      '"Nunito Sans", sans-serif", "Segoe UI Emoji", "Segoe UI Symbol"',
-    heading: '"Nunito Sans", sans-serif' ,
+      '"Inter", sans-serif", "Segoe UI Emoji", "Segoe UI Symbol"',
+    heading: '"Inter", sans-serif' ,
     fontAwesome: "FontAwesome",
   },
   sizes: {
@@ -66,8 +66,9 @@ export default {
             },
             a: {
               ":hover": {
-                color: 'secondary'
+                color: '#05382a'
               },
+              fontSize: '2.25em',
               display: 'block', 
               borderBottom: 'initial',
               textAlign: 'center',
@@ -99,7 +100,7 @@ export default {
           input: {
             ":checked ~ span": {
               opacity: '1',
-              backgroundColor: 'secondary',
+              backgroundColor: 'black',
               transform: 'rotate(45deg) translate(-2px, -1px)',
             },
             ":checked ~ span:nth-of-type(2)": {
@@ -135,8 +136,7 @@ export default {
             height: '4px',
             mb: '5px',
             position: 'relative',
-            backgroundColor: 'white',
-            borderRadius: '3px',
+            backgroundColor: '#adadad',
             zIndex: '1',
             transformOrigin: '4px 0px',
             transition: 'transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease',
@@ -169,6 +169,12 @@ export default {
         padding: 3,
         pl: '0',
         margin: '0'
+      },
+      p: {
+        fontSize: "1.25em",
+        fontWeight: "100",
+        lineHeight: "1.75em",
+        marginBottom: "55px",
       },
       nav: {
         display: ['none', 'none', 'none', 'none'],
@@ -218,7 +224,7 @@ export default {
         color: 'background'
       },
       ".about-header": {
-        color: 'primary'
+        color: 'white'
       },
       ".green-bg": {
         background: '#59E19F'
@@ -250,7 +256,7 @@ export default {
         },      
       },
       "#serviceSection": {
-        background: "#59E19F"
+        background: "#fff"
       },
       "p": {
         "strong": {
@@ -264,7 +270,7 @@ export default {
           // "@media (max-width: 36rem)": {
           // },
           m: ['20px 0 30px'],
-          color: 'secondary'
+          color: 'white'
         },
       },
       h2: {
@@ -323,17 +329,9 @@ export default {
           mb: 0,
         },
       },
-      ".blogListing": {
-        "p": {
-          color: 'secondary',
-        }, 
-      },
 
       // inside pages
       ".inside-header": {
-        h1: {
-          color: "secondary"
-        },
         textAlign: 'center',
         pt: 5,
       },
@@ -389,7 +387,6 @@ export default {
         variant: "textStyles.fontAwesome",
         position: "absolute",
         top: "0",
-        color: "secondary",
         display: "block",
         zIndex: -1,
         margin: 1,

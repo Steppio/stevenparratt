@@ -27,7 +27,7 @@ const Layout = ({ children, ...props }) => {
           styles={css`
             body {
               margin: 0;
-              background: #333;
+              background: black;
             }
           `}
         />
@@ -38,7 +38,6 @@ const Layout = ({ children, ...props }) => {
           }}>  
             <Navigation />
             <MobileNavigation />
-            <InsidePageNav />
           </Container>
         </Header>
         <Main>

@@ -94,6 +94,16 @@
   }
 }
 
+p, blockquote {
+  font-size: 1.25em !important;
+  font-weight: 100 !important;
+  line-height: 1.75em !important;
+}
+blockquote {
+  font-weight: 300 !important;
+}
+
+
 
 .fadeIn {
   -webkit-animation-name: fadeIn;
@@ -165,7 +175,6 @@
   text-align: left;
   padding-left: 45px;  
   cursor: pointer;
-  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -236,10 +245,6 @@
   vertical-align: bottom;
 }
 
-.referencesContainer > section {
-  background: #59E19F;
-}
-
 .referencesContainer .slick-dots {
   position: initial;
 }
@@ -251,10 +256,247 @@
   display: block;
   /*font-family: 'Fredoka One';*/
 }
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Varela Round';
-}
 
 .slick-dots {
   padding-bottom: 0px !important;
+}
+
+.stevenparrattsvg {
+  max-width: 48rem !important;
+  margin: 0 auto !important;
+}
+.bubble1 {
+  width: 120px;
+  height: 120px;
+  top: 165px;
+  left: 125px;
+}
+.bubble2 {
+  width: 85px;
+  height: 85px;
+  bottom: 255px;
+  left: 225px;
+}
+.bubble3 {
+  width: 185px;
+  height: 185px;
+  top: 125px;
+  right: 225px;
+}
+@media only screen and (max-width: 768px) {
+  .bubble1 {
+    width: 30px;
+    height: 30px;
+    top: 20px;
+    left: 90%;
+  }
+  .bubble2 {
+    width: 40px;
+    height: 40px;
+    bottom: 48%;
+    right: 2%;
+    left: auto;
+  }
+  .bubble3 {
+    width: 45px;
+    height: 45px;
+    top: 320px;
+    left: 5%;
+    right: auto;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+  .bubble1 {
+    width: 50px;
+    height: 50px;
+    top: 30px;
+    left: 82%;
+  }
+  .bubble2 {
+    width: 65px;
+    height: 65px;
+    bottom: 48%;
+    right: 2%;
+    left: auto;
+  }
+  .bubble3 {
+    width: 75px;
+    height: 75px;
+    top: 320px;
+    left: 5%;
+    right: auto;
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1450px) {
+  .bubble3 {
+    width: 125px;
+    height: 125px;
+    right: 5%;
+  }
+}
+.image-content {
+  position: relative;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.diagonal-box {
+  background: linear-gradient(to left top, #ffffff 48%, transparent 50%);
+}
+.diagonal-box .content {
+  max-width: 50em;
+  margin: 0 auto;
+  height: 110px;
+}
+.inverse-diagonal .diagonal-box {
+  background: linear-gradient(to left top, #000 48%, #fff 50%);
+}
+.inverse-diagonal .diagonal-box .content {
+  max-width: 50em;
+  margin: 0 auto;
+  height: 110px;
+}
+@media only screen and (min-width: 0px) and (max-width: 768px) {
+  .diagonal-box .content {
+    height: 50px;
+  }  
+  .inverse-diagonal .diagonal-box .content {
+    height: 50px;
+  }  
+}
+
+.hero-down {
+  padding-bottom: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+  .heroBanner {
+    padding-top: 6rem !important;
+  }
+}
+
+.blog-frontpage-header {
+  color: black !important;
+}
+
+.blog-frontpage-container {
+  max-width: 768px !important;
+}
+.blog-frontpage-container h3 {
+  color: black !important;
+}
+.blog-frontpage-container p {
+  color: rgba(0,0,0,0.75) !important;
+  margin-top: 5px;
+}
+.blog-frontpage-container .blog-read {
+  color: black !important;
+}
+.blog-frontpage-container a.black-button {
+  background: black !important;
+  color: white !important;
+}
+
+.referencesContainer blockquote::before, .referencesContainer blockquote::after {
+  color: #adadad !important;
+}
+
+.about-myname {
+  float: left;
+  display: inline-block;
+  width: auto;
+  padding-bottom: 0px !important;  
+}
+
+.hero-down-desktop {
+  max-width: 49% !important;
+}
+
+.inside-list h2 {
+  display: none !important;
+}
+
+.inside-service-back-button {
+  margin: 80px auto 0px !important;
+  float: none;
+  display: block !important;
+}
+
+.inside-page {
+  padding-bottom: 40px;
+}
+
+/* contact */
+#contactSection {
+  padding-left: 1.5em;
+  padding-right: 1.5em;
+}
+.contact_form p {
+  margin-bottom: 25px !important;
+}
+
+#inside-service-content {
+  padding: 0 1.5rem;
+}
+
+@media only screen and (min-width: 0px) {
+  .inside-page h1 {
+    margin-top: 85px;
+  }  
+}
+@media only screen and (min-width: 768px) {
+  .inside-page h1 {
+    margin-top: 125px;
+  }
+}
+
+.inside-list .blog-frontpage-container .blogListing h3,
+.inside-list .blog-frontpage-container .blogListing p,
+.inside-list .blog-frontpage-container .blogListing div {
+  color: white !important;
+}
+
+.olderBlogs p {
+  color: white !important;
+}
+
+.blog-content {
+  max-width: 500px;
+  margin: 50px auto;
+}
+
+.inside-page ul {
+  list-style: disc;
+  padding-left: 30px;
+}
+.inside-page ul li {
+  padding-left: 20px;
+}
+.inside-page h3 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.inside-page a {
+  font-weight: 400;
+}
+.small-type {
+  float: right;
+  display: block;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 40px;
+}
+
+.back-to-services {
+  position: absolute;
+  left: 7px;
+  top: 65px;
+}
+.back-to-services a {
+  background: none;
+  border: 0px;  
+}
+.back-to-services i {
+  color: #adadad;
+  font-size: 1.5em;
 }

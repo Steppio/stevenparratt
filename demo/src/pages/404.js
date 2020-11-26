@@ -1,15 +1,13 @@
 import React from "react"
-import Layout from "@rennehir/gatsby-theme-personal-site/src/components/layout"
-import NotFound from "../../content/assets/undraw_page_not_found_su7k.svg"
+import Layout from "../@rennehir/gatsby-theme-personal-site/components/layout"
+import { StyledHeader1, StyledHeader2 } from '../@rennehir/gatsby-theme-personal-site/components/componentStyle.js'
 
 const NotFoundPage = () => {
   return (
     <Layout>
-      <img
-        src={NotFound}
-        alt="Page not found"
-        style={{ maxWidth: "80%", display: "inherit", margin: "auto" }}
-      />
+    	<br /><br /><br />
+    	<StyledHeader2>Whoops!</StyledHeader2>
+    	<StyledHeader2>404 - Page not found</StyledHeader2>
     </Layout>
   )
 }

@@ -8,13 +8,11 @@ export const Section = styled.section`
   display: block;
   margin-bottom: 0px;
   position: relative;
-  height: 90vh;
 
   @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
     background-size: 100%;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    height: 85vh;
   } 
 
   .constrain_content {
@@ -32,6 +30,12 @@ export const Section = styled.section`
   }
 `
 
+export const stevenparrattsvg = styled.div`
+  ${tw`
+      max-w-sm
+  `}  
+`
+
 export const TextContainer = styled.div`
   ${tw`
       mx-auto mt-0
@@ -42,12 +46,19 @@ export const TextContainer = styled.div`
     `}
   }
   @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-    top: 45%;
+    
   }
-  position: absolute;
-  top: 50%;
-  left: 0%;
-  right: 0;
+  @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
+    h2 {
+      text-align: left;
+      font-size: 1em;
+    } 
+    margin-top: 0px;
+    position: absolute;
+  }
+  margin-top: 20px;
+  bottom: 95px;
+  right: 130px;
   transform: translate(0%, -50%);
   -webkit-transform: translate(0%, -50%);
 `
@@ -56,7 +67,6 @@ export const Myname = styled.div`
   ${tw`
       text-4xl
   `}
-  font-family: 'Dancing Script';
   text-shadow: 2px 2px 4px #0000008f;
   transform: rotate(-5deg);
   @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
@@ -72,17 +82,20 @@ export const Myname = styled.div`
 
 export const Andim = styled.h2`
   ${tw`
-      text-4xl
+      text-4xl clearfix
   `}
-  font-family: 'Dancing Script';
+  text-align: left;
+  font-weight: 100;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  line-height: 1.25em;
+  margin-top: 0px;  
   text-shadow: 2px 2px 4px #0000008f;
-  margin-top: 20px;
-  transform: rotate(-5deg);
   @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-    font-size: 3.25em;
+    font-size: 1.5em;
   }
   @media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
-    font-size: 3.25rem;
+    font-size: 1.5rem;
   }
 `
 
@@ -124,7 +137,6 @@ export const ImageContainer = styled.div`
       display: none;
     }
   }
-  position: absolute;
   bottom: 10px;
   width: 100%;
   grid-area: buttons;

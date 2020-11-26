@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx, Styled } from "theme-ui"
 import { graphql, Link } from "gatsby"
+import CustomLink from "../components/button-link"
 import tw from 'tailwind.macro'
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import styled from "@emotion/styled"
@@ -8,7 +9,7 @@ import SEO from "../components/seo"
 
 import Layout from "../components/layout"
 import Image from "../components/image"
-import { StyledHeader4, InsideHeader, BlogInside } from "../components/componentStyle"
+import { StyledHeader2, InsideHeader, BlogInside } from "../components/componentStyle"
 
 const BlogPostTemplate = ({
   pathContext: { previous, next },
@@ -18,40 +19,48 @@ const BlogPostTemplate = ({
 
   return (
     <Layout sx={{ mb: 4 }}>
-      <SEO postMeta={{ title: title, description: excerpt, slug }} isBlogPost />
+      <div className="back-to-services">
+        <CustomLink to="/blog">
+          <i className="fas fa-arrow-left"></i>
+        </CustomLink>
+      </div>       
+      <SEO postMeta={{ title: title, description: excerpt, slug }} isBlogPost />   
       <InsideHeader>
-        <StyledHeader4>{title}</StyledHeader4>        
-        <Styled.p sx={{ color: "white", textAlign: 'center' }}>Published on {date}</Styled.p>
+        <StyledHeader2>{title}</StyledHeader2>        
+        <Styled.p sx={{ color: "white", textAlign: 'center', marginLeft: 'auto', marginRight: 'auto' }}>Published on {date}</Styled.p>
       </InsideHeader>
       <BlogInside sx={{ mb: 4 }}>
         {cover && (
           <Image
             image={cover}
             sx={{
-              width: "100vw",
               maxHeight: "35vh",
               position: "relative",
-              marginLeft: "-50vw",
-              left: "50%",
+              maxWidth: '1280px',
+              margin: '0 auto'
             }}
           />
         )}
-        <MDXRenderer>{body}</MDXRenderer>
+        <div className="blog-content">
+          <MDXRenderer>{body}</MDXRenderer>
+        </div>
       </BlogInside>
-      <S.LinkContainer sx={{ fontSize: 3 }}>
-        {previous && (
-          <S.LinkContent sx={{ gridArea: "newer" }}>
-            <Styled.p>Newer post:</Styled.p>
-            <Link to={previous.slug}>{previous.title}</Link>
-          </S.LinkContent>
-        )}
-        {next && (
-          <S.LinkContent sx={{ gridArea: "older" }}>
-            <Styled.p>Older post:</Styled.p>
-            <Link to={next.slug}>{next.title}</Link>
-          </S.LinkContent>
-        )}
-      </S.LinkContainer>
+      <div className="olderBlogs">
+        <S.LinkContainer sx={{ fontSize: 3 }}>
+          {previous && (
+            <S.LinkContent sx={{ gridArea: "newer" }}>
+              <Styled.p>Newer post:</Styled.p>
+              <Link to={previous.slug}>{previous.title}</Link>
+            </S.LinkContent>
+          )}
+          {next && (
+            <S.LinkContent sx={{ gridArea: "older" }}>
+              <Styled.p>Older post:</Styled.p>
+              <Link to={next.slug}>{next.title}</Link>
+            </S.LinkContent>
+          )}
+        </S.LinkContainer>
+      </div>
     </Layout>
   )
 }

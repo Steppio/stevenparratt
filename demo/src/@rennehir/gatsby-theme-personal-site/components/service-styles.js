@@ -14,32 +14,173 @@ export const ServiceContainer = styled.div`
 // Homepage service cards
 export const ServiceArticle = styled.article`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-grow: 0;
 	flex-shrink: 0;
 	flex-basis: 100%;
 	box-sizing: border-box;
 	max-width: 728px;
-	background-color: #333 !important;
-	border: 3px solid white;
-	border-radius: 10px !important;
-	border-bottom-color: white;
-	border-right-color: white;
-	border-top-color: #44a978;
-	border-left-color: #44a978;
-	@media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
+	background-color: #000 !important;
+  h3 {
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 60px;
+    font-weight: 100;
+    font-size: 1.8em;    
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints[0]}) {
+    width: 100%;
+  }
+  @media (min-width: 0px) and (max-width: 768px) {
+    .service-image {
+      width: 100%;
+      max-width: initial !important;
+    }
+    .service-detail p {
+      margin: 0 !important;
+      padding: 0 20px 20px;
+      max-width: 100% !important;
+    }
+    .service-detail a {
+      margin-bottom: 20px;
+    }
+    max-width: 500px; 
+  }
+  @media (min-width: 768px) {
+    h3 {
+      font-size: 2em;
+      padding-bottom: 10px;
+    }
+    .service-track {
+      max-height: 245px;
+      position: absolute;
+      height: 400px;
+    }
+    .service-track-container {
+      height: 255px;
+    } 
+    .service-track .service-image, .service-track .service-detail {
+      width: 50%;
+    }   
+    .service-track .service-image {
+      float: left;
+    }
+    .service-track .service-detail {
+      float: right;
+    }
+    .service-detail.track-content p {
+      padding: 0px;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1178px) {
+    .service-track-container {
+      margin-top: 20px;
+    }
+    .service-detail {
+      text-align: center;
+    }
+    .service-detail a {
+      text-align: center;
+      margin-top: 0px;
+      margin-bottom: 20px;
+    }    
+    .service-detail.track-content p {
+      text-align: left;
+    }
+    .service-track {
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+    }
+    .service-track {
+      // width: 602px;    
+    }    
+  }
+	@media (min-width: 1179px) {
+    &:hover {
+      h3 {
+        color: rgba(239, 255, 247, 1);
+      }
+      .service-detail a {
+        transform: scale(1.025);
+      }
+      .service-track {
+        animation: slide-in 0.5s forwards;
+        -webkit-animation: slide-in 0.5s forwards;    
+      }
+    }    
+    h3 {
+      font-size: 1.8em;
+      padding-bottom: 10px;
+    }    
+    .service-image img {
+      // right: 30px;
+    }
     ${tw`
       mx-4
     `}
+    .service-track {
+      width: 610px;    
+    }     
 		max-width: 350px;
 		flex-direction: column;
 		padding-top: 40px;
 		padding-bottom: 60px;
 	}
 
-  :last-of-type {
-    margin-bottom: 0px !important;
+  @keyframes slide-in {
+      100% { transform: translateX(-50%); }
   }
+
+  @-webkit-keyframes slide-in {
+      100% { -webkit-transform: translateX(-50%); }
+  }
+      
+  @keyframes slide-out {
+      0% { transform: translateX(-50%); }
+      100% { transform: translateX(0%); }
+  }
+
+  @-webkit-keyframes slide-out {
+      0% { -webkit-transform: translateX(-50%); }
+      100% { -webkit-transform: translateX(0%); }
+  }
+
+  .slide-in {
+      animation: slide-in 0.5s forwards;
+      -webkit-animation: slide-in 0.5s forwards;
+  }
+
+  .slide-out {
+      animation: slide-out 0.5s forwards;
+      -webkit-animation: slide-out 0.5s forwards;
+  }
+
+  .service-track-container {
+    position: relative;
+    overflow: hidden;
+  }
+  .service-track {
+    ${tw`
+      clearfix
+    `}
+
+    top: 0px;
+    animation: slide-out 0.5s forwards;
+    -webkit-animation: slide-out 0.5s forwards;        
+  }
+
+  .service-track .service-image {
+    max-width: 302px;
+  }
+  .service-track .service-detail p {
+    max-width: 300px;
+    margin-top: 30px;
+  } 
+  .service-detail a {
+    transition: all .2s ease-in-out;
+  }      
 
   ${tw`
       p-6 sm:py-10 mb-0 my-2
@@ -49,17 +190,14 @@ export const ServiceArticle = styled.article`
   	${tw`
   		mb-0
   	`}
-    opacity: 0.4;
-    filter: grayscale(60%); 	
     @media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
 		max-height: 245px;
-		width: 145%;
-		max-width: 325px;
+		width: 100% !important;
+		max-width: 302px;
 		margin: 0 auto;
 		position: relative; 
   }
 	@media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-    	right: 30px;
     	float: left;
     }
     @media (min-width: ${({ theme }) => theme.breakpoints[3]}) {
@@ -68,45 +206,28 @@ export const ServiceArticle = styled.article`
     }
   }
 
-  .service-detail {
-		@media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-			${tw`
-				mx-10		
-			`}
-	  }
-  }
-
   .service-detail h3 {
 	${tw`
 		mt-8 sm:mt-3 lg:mt-8
 	`}  	
     font-size: 1.5em;
     text-align: left;
-    color: #59E19F;
+    color: #fff;
+
   }
   .service-detail p {
   	${tw`
   		mt-3 mb-4 leading-relaxed
   	`}
-	@media (min-width: ${({ theme }) => theme.breakpoints[1]}) {
-  		margin-right: 25px;
-  	}
-  	@media (min-width: ${({ theme }) => theme.breakpoints[2]}) {
-  		max-width: 400px;
-  	}
-    color: #ededed !important;
-  }
   .service-detail a {
-  	@media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-  		max-width: 250px;
-  	}
-    background: rgba(255,255,255,0.1);
+    background: rgba(255,255,255,1);
     text-align: center;
     letter-spacing: 0.05em;
     max-width: 332px;
     width: 100%;
-    color: #59E19F;
-    float: left;    
+    color: #000;
+    float: left;
+    margin-top: 40px;
   }
 
   .service-image {

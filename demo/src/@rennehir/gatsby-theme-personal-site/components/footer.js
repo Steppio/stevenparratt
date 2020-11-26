@@ -20,8 +20,8 @@ const Footer = () => {
       sx={{
         p: 3,
         width: "100%",
-        backgroundColor: "primary",
-        color: "white",
+        backgroundColor: "white",
+        color: "black",
         textAlign: "center",
       }}
     >
@@ -57,7 +57,7 @@ const Footer = () => {
             color: "background", 
             textDecoration: "none",
             m: "0",
-            ":hover": { color: "white" },
+            ":hover": { color: "#05382a" },
             transition: "color 200ms ease-in-out",            
           }}
         >
@@ -79,7 +79,7 @@ const Link = ({ to, children, ...props }) => (
       fontSize: 5,
       color: "background",
       mx: 2,
-      ":hover": { color: "white" },
+      ":hover": { color: "#05382a" },
       transition: "color 200ms ease-in-out",
     }}
     {...props}
