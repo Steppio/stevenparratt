@@ -21,16 +21,16 @@ class ContactForm extends React.Component {
 			>
 
 				<div class="mb-4">
-					<label class="text-left color-white text-gray-200 block text-sm mb-2" for="Name">Name *</label>
-					<input required name='Name' ref={node => (this.nameNode = node)} className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Name" type="text" placeholder="Name" />
+					<label class="text-left color-white text-gray-200 block text-sm mb-2" for="name">Name *</label>
+					<input required name='name' ref={node => (this.nameNode = node)} className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="name" type="text" placeholder="name" />
 				</div>
 				<div class="mb-4">
 					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="email">Email *</label>
 					<input ref={node => (this.emailNode = node)} className={`${showEmailError ? 'shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline pv2 ba b--light-red' : 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline'}`} id="email" name="email" type="email" placeholder="Email" />
 				</div>
 				<div class="mb-4">
-					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="Message">Message *</label>
-					<textarea id="Message" required name='Message' placeholder='Message' className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+					<label class="block text-left color-white text-gray-200 text-sm mb-2" for="message">Message *</label>
+					<textarea id="message" required name='message' placeholder='Message' className="shadow appearance-none border  w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
 		              ref={node => (this.messageNode = node)}
 		            ></textarea>
 				</div>
