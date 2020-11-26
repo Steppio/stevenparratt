@@ -71,7 +71,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Steven Parratt - Freelance Web Developer`,
+        name: `Steven Parratt - Freelance Web Developer - Liverpool, England`,
         short_name: `StevenParratt.co.uk`,
         start_url: `/`,
         icon: `${__dirname}/src/images/SPlogo.png`,

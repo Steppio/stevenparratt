@@ -12,7 +12,7 @@ import Blog from "../components/sections/blog-section"
 import { StyledHeader1 } from '../components/componentStyle'
 
 const ServiceTemplate = ({ pathContext: { basePaths }, data: { service } }) => {
-  const { title, metadescription, slug, excerpt, body, illustration } = service
+  const { title, slug, excerpt, body, illustration } = service
 
   return (
     <Layout>    
@@ -23,7 +23,7 @@ const ServiceTemplate = ({ pathContext: { basePaths }, data: { service } }) => {
           </Link>
         </div>
         <StyledHeader1 sx={{ fontWeight: '100' }}>{title}</StyledHeader1>
-        <SEO postMeta={{ title: title, description: metadescription, slug, image: illustration.publicURL }} />
+        <SEO postMeta={{ title: title, description: excerpt, slug, image: illustration.publicURL }} />
         <div id="inside-service-image" sx={{ maxWidth: '400px', margin: '0 auto' }}>
           {illustration && (
             <Image
@@ -53,7 +53,6 @@ export const query = graphql`
   query($id: String!) {
     service(id: { eq: $id }) {
       title
-      metadescription
       slug
       excerpt
       body
