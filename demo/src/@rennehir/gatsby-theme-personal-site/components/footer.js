@@ -4,12 +4,13 @@ import { useStaticQuery, graphql } from "gatsby"
 
 const Footer = () => {
   const {
-    footerYaml: { facebook, twitter, github, linkedin },
+    footerYaml: { facebook, twitter, instagram, github, linkedin },
   } = useStaticQuery(graphql`
     query {
       footerYaml {
         facebook
         github
+        instagram
         linkedin
         twitter
       }
@@ -37,10 +38,15 @@ const Footer = () => {
           </Link>
         )}
         {github && (
-          <Link to={github} aria-label="Follow me on GitHub">
+          <Link to={github} aria-label="Follow me on ">
             <i className="fab fa-github" />
           </Link>
         )}
+        {instagram && (
+          <Link to={instagram} aria-label="Follow me on Instagram">
+            <i className="fab fa-instagram" />
+          </Link>
+        )}        
         {twitter && (
           <Link to={twitter} aria-label="Follow me on Twitter">
             <i className="fab fa-twitter" />

@@ -16,7 +16,7 @@ const BlogSection = ({ title, posts, basePath }) => {
         {posts.map(post => (
           <BlogLink key={post.id} {...post} />
         ))}
-        {basePath && <Link className="black-button" to={basePath}>Read all</Link>}
+        {basePath && <Link sx={{ marginLeft: '0', marginRight: '0' }} className="black-button" to={basePath}>Read all</Link>}
       </BlogContainer>
     </Section>
   )

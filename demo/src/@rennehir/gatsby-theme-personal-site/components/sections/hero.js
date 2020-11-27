@@ -26,9 +26,9 @@ const Hero = ({ greeting, name, subtitle, image }) => {
   return (
     <Section className="heroBanner" sx={{ margin: '0 auto' }}>
       <div className="shapes">
-        <Bubble className="bubble1" sx={{ animation: `${down} 10s ease-in-out infinite alternate` }}></Bubble>
-        <Bubble className="bubble2" sx={{ animation: `${rotateDown} 10s ease-in-out infinite alternate` }}></Bubble>
-        <Bubble className="bubble3" sx={{ animation: `${diamondTurn} 10s ease-in-out infinite alternate` }}></Bubble>
+        <Bubble className="bubble1 fadeIn" sx={{ animation: `${down} 10s ease-in-out infinite alternate` }}></Bubble>
+        <Bubble className="bubble2 fadeIn" sx={{ animation: `${rotateDown} 10s ease-in-out infinite alternate` }}></Bubble>
+        <Bubble className="bubble3 fadeIn" sx={{ animation: `${diamondTurn} 10s ease-in-out infinite alternate` }}></Bubble>
       </div>
       <div className="image-content">
         <Image image={image} alt={name} className="stevenparrattsvg" /> 

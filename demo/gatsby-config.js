@@ -31,13 +31,18 @@ module.exports = {
         referencesBasePath: "/references", // default: /references
         servicesBasePath: "/services", // default: /services
       },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: "UA-160066070-1",
-      },
     }, 
+    {
+      resolve: `gatsby-plugin-gdpr-cookies`,
+      options: {
+        googleAnalytics: {
+          trackingId: 'UA-160066070-1',
+          // Setting this parameter is optional
+        },
+        // Defines the environments where the tracking should be available  - default is ["production"]
+        environments: ['production', 'development']
+      },
+    },    
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

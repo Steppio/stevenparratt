@@ -77,14 +77,15 @@ export const ProfileDetail = styled.div`
 
 export const SocialBits = styled.div`
 	${tw`
-		pb-5 hidden md:flex lg:pb-0 w-4/5 lg:w-full mx-auto flex-wrap items-center
+		pb-5 md:flex lg:pb-0 w-4/5 lg:w-full mx-auto flex-wrap items-center
 	`}
 	&:hover {
 		
 	}
 	a {
 		color: white !important;
-		margin: 0 29px 0px;
+		margin: 0 12px 0px;
+		font-size: 2.15em;
 	}
 	a svg {
 		font-size: 2em;
@@ -93,11 +94,11 @@ export const SocialBits = styled.div`
 	a svg {
 		max-width: 35px;
 	}
-	margin-top: 80px;
-	width: 105px;
-	@media (min-width: ${({ theme }) => theme.breakpoints[0]}) {
-		width: 250px;
-	}
+	margin-top: 50px;
+	width: 100%;
+	padding-left: 1.5rem;
+	max-width: 335px;
+	padding-right: 1.5rem;
 `
 
 export const ProfileButton = styled.div`

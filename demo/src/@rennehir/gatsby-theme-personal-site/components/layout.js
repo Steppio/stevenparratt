@@ -15,6 +15,7 @@ import Navigation from "./navigation"
 import MobileNavigation from "./mobile-navigation"
 import InsidePageNav from './inside-page-nav' 
 import Footer from "./footer.js"
+import CookieConsent from 'react-cookie-consent'
 
 import "@fortawesome/fontawesome-free/css/all.css"
 import "./layout.css"
@@ -47,6 +48,14 @@ const Layout = ({ children, ...props }) => {
           <Footer />
         </StyledFooter>
       </StyledLayout>
+
+      <CookieConsent
+                location="bottom"
+                buttonText="Accept"
+                declineButtonText="Decline"
+                cookieName="gatsby-gdpr-google-analytics">
+      This site uses cookies ...
+      </CookieConsent>      
     </ThemeProvider>
   )
 }
