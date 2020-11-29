@@ -34,7 +34,7 @@ const FrontpageTemplate = ({ data, pageContext }) => {
         <About />
       </div>
       <SVGbottom />
-        <div className="referencesContainer clearfix" sx={{ background: "#fff" }}>
+        <div className="referencesContainer clearfix" sx={{ background: "#fff", paddingLeft: '1.5rem', paddingRight: '1.5rem' }}>
           <References
             title="References"
             references={references.nodes}
