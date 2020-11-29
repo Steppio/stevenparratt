@@ -5,6 +5,9 @@ const {
   createServiceType,
 } = require("./src/utils/types")
 
+const basePaths = {}
+const contentPaths = {}
+
 const createMdxNode = require("./src/utils/createMdxNode")
 
 exports.sourceNodes = ({ actions, schema }) => {
