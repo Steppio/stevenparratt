@@ -6,9 +6,9 @@ const createServiceType = schema => {
     fields: {
       id: { type: `ID!` },
       title: { type: `String!` },
-      metadescription: { type: `String!` },
-      metatitle: { type: `String!` },
-      tracktitle: { type: `String!` },
+      metadescription: { type: `String` },
+      metatitle: { type: `String` },
+      tracktitle: { type: `String` },
       slug: { type: `String!` },
       illustration: { type: `File!` },
       excerpt: {
