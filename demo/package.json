@@ -9,6 +9,7 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
+    "deploy": "gatsby-plugin-s3 deploy",
     "serve": "gatsby serve",
     "preload-fonts": "gatsby-preload-fonts",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
@@ -31,6 +32,7 @@
     "gatsby-plugin-preload-fonts": "^1.2.1",
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-robots-txt": "^1.5.3",
+    "gatsby-plugin-s3": "^0.3.8",
     "gatsby-plugin-sharp": "^2.4.13",
     "gatsby-plugin-sitemap": "^2.7.0",
     "gatsby-plugin-smoothscroll": "^1.1.0",

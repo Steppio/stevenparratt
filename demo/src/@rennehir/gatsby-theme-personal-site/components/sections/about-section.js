@@ -22,6 +22,7 @@ import Reference from "../reference-link"
 import ButtonLink from "../button-link"
 // import Img from "gatsby-image"
 import Image from "../image"
+import Img from 'gatsby-image'
 
 import Navsocial from '../navsocial'
 
@@ -29,7 +30,7 @@ const AboutSection = ({ }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "me.jpg" }) {
+      file(relativePath: { eq: "me-bw.png" }) {
         childImageSharp {
           # Specify the image processing specifications right in the query.
           # Makes it trivial to update as your page's design changes.
@@ -52,9 +53,9 @@ const AboutSection = ({ }) => {
           <ProfileDetail>
             
             <ProfileDescription>
-              <p>A web developer from Liverpool, England with 15 years experience. Passionate about performance, design and e-commerce. Also passionate about Dachshunds... and biscuits.</p>
-              <p>Having worked within a number of big tech companies in the past, I'm now freelancing so I can spend more time experimenting with cutting-edge technology, and more time eating biscuits. </p>
-              <p>If you would like to chat about either websites or Dachshunds please get in touch.</p>
+              <p>A web developer from Liverpool, England with 15 years experience. Passionate about <a href="https://gtmetrix.com/reports/stevenparratt.co.uk/o4UuFWY3/" target="_blank">performance</a>, design and e-commerce. Also passionate about Dachshunds... and biscuits.</p>
+              <p>Having worked within a number of big tech companies in the past, I'm now freelancing so I can spend more time experimenting with cutting-edge technology, and more time eating <a href="https://www.google.com/search?q=biscuits&sxsrf=ALeKk00yhCNAmoB7xmMcl2Rpskm8DoPKqw:1606732850882&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjbpc2miqrtAhUUT8AKHUw9DY0Q_AUoAXoECAUQAw&cshid=1606732866841312&biw=1881&bih=923" target="_blank">biscuits</a>. </p>
+              <p>If you would like to chat about either websites or <a href="https://www.google.com/search?q=daschund&tbm=isch&ved=2ahUKEwiRq4uyiqrtAhUK0oUKHWHwApUQ2-cCegQIABAA&oq=dasc&gs_lcp=CgNpbWcQARgAMgQIIxAnMggIABCxAxCDATICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAOgQIABBDOgcIABCxAxBDOgUIABCxA1DB4ANY7ugDYIzwA2gAcAB4AIABaogBkQOSAQMyLjKYAQCgAQGqAQtnd3Mtd2l6LWltZ8ABAQ&sclient=img&ei=SszEX5HeOoqklwTh4IuoCQ&bih=923&biw=1881" target="_blank">Dachshunds</a> please get in touch.</p>
             </ProfileDescription>
 
             <ProfileButton>
@@ -66,11 +67,9 @@ const AboutSection = ({ }) => {
           </ProfileDetail>
         
         </Profile>
-        
-
 
         <ProfileImage>
-          <img src="me-bw.png" />
+          <Img fixed={data.file.childImageSharp.fixed} alt="Image of Steven Parratt" />
         </ProfileImage>
       </AboutContainer>
       

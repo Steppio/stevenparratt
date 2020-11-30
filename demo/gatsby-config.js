@@ -64,7 +64,12 @@ module.exports = {
         }
       }
     },
-    `gatsby-plugin-netlify-cache`,
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+        bucketName: "stevenparratt",
+      },
+    },    
     `gatsby-plugin-transition-link`,
     {
       resolve: "gatsby-plugin-react-svg",
